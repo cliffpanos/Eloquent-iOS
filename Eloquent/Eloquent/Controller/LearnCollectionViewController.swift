@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  LearnCollectionViewController.swift
 //  Eloquent
 //
 //  Created by Cliff Panos on 2/14/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class LearnCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

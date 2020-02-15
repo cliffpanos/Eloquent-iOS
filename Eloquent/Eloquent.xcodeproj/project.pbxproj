@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B223F7C294004A0DC8 /* AppDelegate.swift */; };
 		912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B423F7C294004A0DC8 /* SceneDelegate.swift */; };
-		912068B723F7C294004A0DC8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* FirstViewController.swift */; };
-		912068B923F7C294004A0DC8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B823F7C294004A0DC8 /* SecondViewController.swift */; };
+		912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */; };
+		912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */; };
 		912068BC23F7C294004A0DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912068BA23F7C294004A0DC8 /* Main.storyboard */; };
 		912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 912068BD23F7C294004A0DC8 /* Eloquent.xcdatamodeld */; };
 		912068C123F7C296004A0DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912068C023F7C296004A0DC8 /* Assets.xcassets */; };
 		912068C423F7C296004A0DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912068C223F7C296004A0DC8 /* LaunchScreen.storyboard */; };
 		912068CF23F7C296004A0DC8 /* EloquentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068CE23F7C296004A0DC8 /* EloquentTests.swift */; };
+		9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188123F7FD0200C23C66 /* EloquentButton.swift */; };
+		9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188323F7FD4A00C23C66 /* UIView+Core.swift */; };
+		9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188523F8666F00C23C66 /* EloquentNavigationController.swift */; };
+		9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188A23F867ED00C23C66 /* AnalysisViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +36,8 @@
 		912068AF23F7C294004A0DC8 /* Eloquent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068B223F7C294004A0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912068B423F7C294004A0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		912068B623F7C294004A0DC8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		912068B823F7C294004A0DC8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCollectionViewController.swift; sourceTree = "<group>"; };
+		912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakComposeViewController.swift; sourceTree = "<group>"; };
 		912068BB23F7C294004A0DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		912068BE23F7C294004A0DC8 /* Eloquent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eloquent.xcdatamodel; sourceTree = "<group>"; };
 		912068C023F7C296004A0DC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +46,10 @@
 		912068CA23F7C296004A0DC8 /* EloquentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068CE23F7C296004A0DC8 /* EloquentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentTests.swift; sourceTree = "<group>"; };
 		912068D023F7C296004A0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9155188123F7FD0200C23C66 /* EloquentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentButton.swift; sourceTree = "<group>"; };
+		9155188323F7FD4A00C23C66 /* UIView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
+		9155188523F8666F00C23C66 /* EloquentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentNavigationController.swift; sourceTree = "<group>"; };
+		9155188A23F867ED00C23C66 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,8 @@
 			children = (
 				912068D923F7D40E004A0DC8 /* App */,
 				912068DA23F7D416004A0DC8 /* Controller */,
+				9155187F23F7FCA200C23C66 /* View */,
+				9155188023F7FCBD00C23C66 /* Extensions */,
 				912068DB23F7D422004A0DC8 /* Assets */,
 				912068BA23F7C294004A0DC8 /* Main.storyboard */,
 				912068C223F7C296004A0DC8 /* LaunchScreen.storyboard */,
@@ -115,8 +125,10 @@
 		912068DA23F7D416004A0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				912068B623F7C294004A0DC8 /* FirstViewController.swift */,
-				912068B823F7C294004A0DC8 /* SecondViewController.swift */,
+				912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */,
+				912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */,
+				9155188A23F867ED00C23C66 /* AnalysisViewController.swift */,
+				9155188723F8679D00C23C66 /* Container */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,6 +139,30 @@
 				912068C023F7C296004A0DC8 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		9155187F23F7FCA200C23C66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9155188123F7FD0200C23C66 /* EloquentButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9155188023F7FCBD00C23C66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9155188323F7FD4A00C23C66 /* UIView+Core.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9155188723F8679D00C23C66 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				9155188523F8666F00C23C66 /* EloquentNavigationController.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,10 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				912068B923F7C294004A0DC8 /* SecondViewController.swift in Sources */,
-				912068B723F7C294004A0DC8 /* FirstViewController.swift in Sources */,
+				9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */,
+				912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */,
+				912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */,
 				912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
+				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
+				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,
+				9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */,
 				912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
