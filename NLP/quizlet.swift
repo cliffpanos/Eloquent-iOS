@@ -13,6 +13,7 @@ class FlashCard {
 
 class Quizlet {
     var url: URL
+    var name: String
     var cards: [FlashCard]
     init(url urlString: String) {
         self.url = URL(string: urlString)!
@@ -28,5 +29,6 @@ class Quizlet {
                 }
             }
         }
+        name = doc.at_css(".UIHeading--one")!.text!
     }
 }

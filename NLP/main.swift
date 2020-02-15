@@ -5,3 +5,4 @@ for card in qz.cards {
     print(card.term, card.definition)
 }
 
+print(qz.name)
