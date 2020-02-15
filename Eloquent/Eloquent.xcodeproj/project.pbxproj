@@ -11,6 +11,8 @@
 		9113A45A23F89BAC007B8ABF /* HoundifyPhraseSpotter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189C23F88C8D00C23C66 /* HoundifyPhraseSpotter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9113A45C23F89BAE007B8ABF /* HoundifySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189923F88BF000C23C66 /* HoundifySDK.framework */; };
 		9113A45D23F89BAE007B8ABF /* HoundifySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189923F88BF000C23C66 /* HoundifySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9113A45F23F89D1A007B8ABF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A45E23F89D1A007B8ABF /* User.swift */; };
+		9113A46123F89F19007B8ABF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46023F89F19007B8ABF /* DataController.swift */; };
 		912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B223F7C294004A0DC8 /* AppDelegate.swift */; };
 		912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B423F7C294004A0DC8 /* SceneDelegate.swift */; };
 		912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9113A45E23F89D1A007B8ABF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9113A46023F89F19007B8ABF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		912068AF23F7C294004A0DC8 /* Eloquent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068B223F7C294004A0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912068B423F7C294004A0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 		9155188F23F869E700C23C66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9113A45E23F89D1A007B8ABF /* User.swift */,
 				9155189023F86A0100C23C66 /* LearnItem.swift */,
 				9155189223F86A5F00C23C66 /* LearnItemSet.swift */,
 			);
@@ -220,6 +225,7 @@
 		9155189423F86C7E00C23C66 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9113A46023F89F19007B8ABF /* DataController.swift */,
 				9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */,
 			);
 			path = Data;
@@ -354,8 +360,10 @@
 				912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */,
 				912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */,
 				9155189123F86A0100C23C66 /* LearnItem.swift in Sources */,
+				9113A45F23F89D1A007B8ABF /* User.swift in Sources */,
 				912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */,
 				915518A223F896EC00C23C66 /* RootViewController.swift in Sources */,
+				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
 				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
 				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,

@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        DataController.shared.managedObjectContext = self.persistentContainer.viewContext
+        
         Hound.setClientID(EloquentHoundified.clientID)
         Hound.setClientKey(EloquentHoundified.clientKey)
         
