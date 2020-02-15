@@ -18,7 +18,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Learn" id="3aJ-kn-oq8"/>
+                    <navigationItem key="navigationItem" title="Learn" id="3aJ-kn-oq8">
+                        <rightBarButtonItems>
+                            <barButtonItem width="20" id="cw3-2T-YCr"/>
+                            <barButtonItem title="Item" image="Contact-Default" id="QXt-ey-0pa">
+                                <inset key="largeContentSizeImageInsets" minX="0.0" minY="18" maxX="18" maxY="0.0"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,6 +302,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUser" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="g2Y-RF-dsc" kind="relationship" relationship="rootViewController" id="0J9-ww-W8c"/>
                     </connections>
@@ -314,6 +324,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUserButton" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUser" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="dwX-uu-7yi"/>
                     </connections>
@@ -333,6 +347,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUserButton" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUser" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="MLI-Cl-v5V"/>
                     </connections>
@@ -343,6 +361,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Contact-Default" width="33" height="33"/>
         <image name="Tab-Bar-Card" width="20" height="25"/>
         <image name="Tab-Bar-Speak" width="27" height="27"/>
         <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>

@@ -14,8 +14,12 @@ extension User {
     /// The current user or a new, default user if none existed
     public private(set) static var current: User = {
         let controller = DataController.shared
-        if let user = controller.fetchAllObjects(for: User.fetchRequest()).first {
-            return user
+        let users = controller.fetchAllObjects(for: User.fetchRequest())
+        let earliestUser = users.max { (first, second) -> Bool in
+            first.dateCreated! < second.dateCreated!
+        }
+        if let foundUser = earliestUser {
+            return foundUser
         }
         
         let newUser = controller.create(new: User.self)
@@ -27,8 +31,13 @@ extension User {
     }()
 
     public var contactImage: UIImage? {
-        guard let data = imageData else { return nil}
-        return UIImage(data: data)
+        get {
+            guard let data = imageData else { return nil}
+            return UIImage(data: data, scale: UIScreen.main.scale)?.withRenderingMode(.alwaysOriginal)
+        }
+        set {
+            self.imageData = newValue?.pngData()
+        }
     }
     
 }
