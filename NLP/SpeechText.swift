@@ -53,6 +53,18 @@ class SpeechText {
     var numFillers : Int {
         return tokens.map{$0.filler ? 1 : 0}.reduce(0, +)
     }
+
+    var numSlang : Int {
+        var count = 0;
+        for n in slang.keys {
+            for gram in ngrams(n: n) {
+                if slang[n]!.contains(gram) {
+                    count += 1
+                }
+            }
+        }
+        return count
+    }
 }
 
 let fillers = [
