@@ -24,6 +24,7 @@
 		9155189123F86A0100C23C66 /* LearnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189023F86A0100C23C66 /* LearnItem.swift */; };
 		9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189223F86A5F00C23C66 /* LearnItemSet.swift */; };
 		9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */; };
+		9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189723F8730200C23C66 /* UIViewController+Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9155189023F86A0100C23C66 /* LearnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItem.swift; sourceTree = "<group>"; };
 		9155189223F86A5F00C23C66 /* LearnItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItemSet.swift; sourceTree = "<group>"; };
 		9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSetExtractor.swift; sourceTree = "<group>"; };
+		9155189723F8730200C23C66 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				9155188323F7FD4A00C23C66 /* UIView+Core.swift */,
+				9155189723F8730200C23C66 /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,
 				9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */,
 				912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */,
+				9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */,
 				9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */,
 				9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */,
 			);

@@ -53,6 +53,9 @@
                                                 <real key="value" value="13"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapPasteButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="oRT-B9-3SQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYb-fR-zmp" customClass="EloquentButton" customModule="Eloquent" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="66" width="311" height="50"/>
@@ -72,6 +75,9 @@
                                                 <real key="value" value="13"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapChooseFileButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ptW-vY-Ulh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-31-HaA" customClass="EloquentButton" customModule="Eloquent" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="507" width="311" height="50"/>
@@ -91,10 +97,21 @@
                                                 <real key="value" value="13"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapStartButton:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="3Ie-6j-gb6"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2o-sO-0Vf" userLabel="Inner Container">
                                         <rect key="frame" x="0.0" y="132" width="311" height="359"/>
                                         <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPL-Nl-PH5">
+                                                <rect key="frame" x="8" y="8" width="295" height="343"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="Primary"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Choose a speech to practice or speak ad-lib." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfz-q4-xgV">
                                                 <rect key="frame" x="44.000000000000014" y="159.33333333333331" width="223.33333333333337" height="40.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -102,13 +119,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wfz-q4-xgV" secondAttribute="trailing" constant="40" id="03G-b1-RPm"/>
                                             <constraint firstItem="wfz-q4-xgV" firstAttribute="centerX" secondItem="O2o-sO-0Vf" secondAttribute="centerX" id="TwJ-7S-I2m"/>
                                             <constraint firstItem="wfz-q4-xgV" firstAttribute="centerY" secondItem="O2o-sO-0Vf" secondAttribute="centerY" id="WQS-08-a8D"/>
                                             <constraint firstItem="wfz-q4-xgV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O2o-sO-0Vf" secondAttribute="leading" constant="40" id="XA8-TU-LHo"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="bPL-Nl-PH5" secondAttribute="bottom" id="aKp-Vf-6bg"/>
+                                            <constraint firstItem="bPL-Nl-PH5" firstAttribute="leading" secondItem="O2o-sO-0Vf" secondAttribute="leadingMargin" id="phS-qB-9sD"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="bPL-Nl-PH5" secondAttribute="trailing" id="qSY-Sf-nLc"/>
+                                            <constraint firstItem="bPL-Nl-PH5" firstAttribute="top" secondItem="O2o-sO-0Vf" secondAttribute="topMargin" id="qWD-ck-lGt"/>
                                         </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <variation key="widthClass=regular">
+                                            <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,7 +165,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Speak" id="UC2-uR-WLw"/>
                     <connections>
-                        <outlet property="goButton" destination="KgE-31-HaA" id="1c6-bx-utq"/>
+                        <outlet property="previewContainer" destination="O2o-sO-0Vf" id="MoI-tZ-uM9"/>
+                        <outlet property="previewLabel" destination="wfz-q4-xgV" id="0FS-pZ-bMm"/>
+                        <outlet property="startButton" destination="KgE-31-HaA" id="1c6-bx-utq"/>
+                        <outlet property="textView" destination="bPL-Nl-PH5" id="FMI-h7-GLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -321,7 +349,7 @@
         <image name="doc.text.magnifyingglass" catalog="system" width="116" height="128"/>
         <image name="paperclip.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Primary">
-            <color red="0.67799997329711914" green="0.87099999189376831" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67368637006541798" green="0.86543625593185425" blue="0.34113927630599267" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Secondary">
             <color red="0.22699999809265137" green="0.54900002479553223" blue="0.46700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
