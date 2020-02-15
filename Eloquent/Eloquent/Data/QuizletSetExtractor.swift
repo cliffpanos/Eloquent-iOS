@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kanna
 
 public class QuizletSetExtractor: NSObject {
     
@@ -35,14 +36,19 @@ public class QuizletSetExtractor: NSObject {
             
             // Parse the data into items
             var items = [LearnItem]()
-            // TODO: insert parsing
-            for _ in 0..<4 {
-                items.append(LearnItem(term: "Affordance",
-                                       definition: "An action that is possible on an object or environment"))
+            let doc = (try? HTML(html: htmlData, encoding: .utf8))!
+            for node in doc.css(".SetPageTerm-content") {
+                let termDef = node.css(".TermText")
+                if let term = termDef[0].text {
+                    if let def = termDef[1].text {
+                        items.append(LearnItem(term: term, definition: def))
+                    }
+                }
             }
             
             // Configure the set
-            let itemSet = LearnItemSet(named: "English Vocabulary", items: items)
+            let name = doc.at_css(".UIHeading--one")!.text!
+            let itemSet = LearnItemSet(named: name, items: items)
             
             // Call the completion handler on the main queue
             DispatchQueue.main.async {
