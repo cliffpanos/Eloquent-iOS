@@ -83,15 +83,13 @@
 		912068B123F7C294004A0DC8 /* Eloquent */ = {
 			isa = PBXGroup;
 			children = (
-				912068B223F7C294004A0DC8 /* AppDelegate.swift */,
-				912068B423F7C294004A0DC8 /* SceneDelegate.swift */,
-				912068B623F7C294004A0DC8 /* FirstViewController.swift */,
-				912068B823F7C294004A0DC8 /* SecondViewController.swift */,
+				912068D923F7D40E004A0DC8 /* App */,
+				912068DA23F7D416004A0DC8 /* Controller */,
+				912068DB23F7D422004A0DC8 /* Assets */,
 				912068BA23F7C294004A0DC8 /* Main.storyboard */,
-				912068C023F7C296004A0DC8 /* Assets.xcassets */,
 				912068C223F7C296004A0DC8 /* LaunchScreen.storyboard */,
-				912068C523F7C296004A0DC8 /* Info.plist */,
 				912068BD23F7C294004A0DC8 /* Eloquent.xcdatamodeld */,
+				912068C523F7C296004A0DC8 /* Info.plist */,
 			);
 			path = Eloquent;
 			sourceTree = "<group>";
@@ -103,6 +101,32 @@
 				912068D023F7C296004A0DC8 /* Info.plist */,
 			);
 			path = EloquentTests;
+			sourceTree = "<group>";
+		};
+		912068D923F7D40E004A0DC8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				912068B223F7C294004A0DC8 /* AppDelegate.swift */,
+				912068B423F7C294004A0DC8 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		912068DA23F7D416004A0DC8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				912068B623F7C294004A0DC8 /* FirstViewController.swift */,
+				912068B823F7C294004A0DC8 /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		912068DB23F7D422004A0DC8 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				912068C023F7C296004A0DC8 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
