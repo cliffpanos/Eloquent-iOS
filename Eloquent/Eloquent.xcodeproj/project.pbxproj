@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188323F7FD4A00C23C66 /* UIView+Core.swift */; };
 		9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188523F8666F00C23C66 /* EloquentNavigationController.swift */; };
 		9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188A23F867ED00C23C66 /* AnalysisViewController.swift */; };
+		9155188E23F868AA00C23C66 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 9155188D23F868AA00C23C66 /* Kanna */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9155188E23F868AA00C23C66 /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,9 @@
 			dependencies = (
 			);
 			name = Eloquent;
+			packageProductDependencies = (
+				9155188D23F868AA00C23C66 /* Kanna */,
+			);
 			productName = Eloquent;
 			productReference = 912068AF23F7C294004A0DC8 /* Eloquent.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 912068A623F7C294004A0DC8;
+			packageReferences = (
+				9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */,
+			);
 			productRefGroup = 912068B023F7C294004A0DC8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -543,6 +551,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tid-kijyun/Kanna";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9155188D23F868AA00C23C66 /* Kanna */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */;
+			productName = Kanna;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		912068BD23F7C294004A0DC8 /* Eloquent.xcdatamodeld */ = {
