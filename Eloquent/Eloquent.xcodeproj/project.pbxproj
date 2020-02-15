@@ -21,6 +21,9 @@
 		9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188523F8666F00C23C66 /* EloquentNavigationController.swift */; };
 		9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188A23F867ED00C23C66 /* AnalysisViewController.swift */; };
 		9155188E23F868AA00C23C66 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 9155188D23F868AA00C23C66 /* Kanna */; };
+		9155189123F86A0100C23C66 /* LearnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189023F86A0100C23C66 /* LearnItem.swift */; };
+		9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189223F86A5F00C23C66 /* LearnItemSet.swift */; };
+		9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		9155188323F7FD4A00C23C66 /* UIView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
 		9155188523F8666F00C23C66 /* EloquentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentNavigationController.swift; sourceTree = "<group>"; };
 		9155188A23F867ED00C23C66 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		9155189023F86A0100C23C66 /* LearnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItem.swift; sourceTree = "<group>"; };
+		9155189223F86A5F00C23C66 /* LearnItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItemSet.swift; sourceTree = "<group>"; };
+		9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSetExtractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,8 @@
 				912068D923F7D40E004A0DC8 /* App */,
 				912068DA23F7D416004A0DC8 /* Controller */,
 				9155187F23F7FCA200C23C66 /* View */,
+				9155188F23F869E700C23C66 /* Model */,
+				9155189423F86C7E00C23C66 /* Data */,
 				9155188023F7FCBD00C23C66 /* Extensions */,
 				912068DB23F7D422004A0DC8 /* Assets */,
 				912068BA23F7C294004A0DC8 /* Main.storyboard */,
@@ -165,6 +173,23 @@
 				9155188523F8666F00C23C66 /* EloquentNavigationController.swift */,
 			);
 			path = Container;
+			sourceTree = "<group>";
+		};
+		9155188F23F869E700C23C66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9155189023F86A0100C23C66 /* LearnItem.swift */,
+				9155189223F86A5F00C23C66 /* LearnItemSet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9155189423F86C7E00C23C66 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +302,15 @@
 				9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */,
 				912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */,
 				912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */,
+				9155189123F86A0100C23C66 /* LearnItem.swift in Sources */,
 				912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
 				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
 				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,
 				9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */,
 				912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */,
+				9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */,
+				9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
