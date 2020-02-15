@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="1659" y="1053"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Root View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="RootViewController" customModule="Eloquent" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -349,7 +349,7 @@
         <image name="doc.text.magnifyingglass" catalog="system" width="116" height="128"/>
         <image name="paperclip.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Primary">
-            <color red="0.67368637006541798" green="0.86543625593185425" blue="0.34113927630599267" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.67400002479553223" green="0.86500000953674316" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Secondary">
             <color red="0.22699999809265137" green="0.54900002479553223" blue="0.46700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

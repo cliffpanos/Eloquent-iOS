@@ -44,7 +44,7 @@ class EloquentNavigationController: UINavigationController {
         } else {
             let style = NSMutableParagraphStyle()
             style.alignment = .justified
-            style.firstLineHeadIndent = 26
+            style.firstLineHeadIndent = 28
             appearance.largeTitleTextAttributes[NSAttributedString.Key.paragraphStyle] = style
         }
     }
