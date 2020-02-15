@@ -15,6 +15,7 @@
 		9113A46123F89F19007B8ABF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46023F89F19007B8ABF /* DataController.swift */; };
 		9113A46323F8A4EA007B8ABF /* UserBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */; };
 		9113A46623F8B367007B8ABF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9113A46523F8B367007B8ABF /* CloudKit.framework */; };
+		9113A46923F8BBAB007B8ABF /* Reductio in Frameworks */ = {isa = PBXBuildFile; productRef = 9113A46823F8BBAB007B8ABF /* Reductio */; };
 		912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B223F7C294004A0DC8 /* AppDelegate.swift */; };
 		912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B423F7C294004A0DC8 /* SceneDelegate.swift */; };
 		912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */; };
@@ -103,6 +104,7 @@
 				9113A45C23F89BAE007B8ABF /* HoundifySDK.framework in Frameworks */,
 				9113A46623F8B367007B8ABF /* CloudKit.framework in Frameworks */,
 				9113A45923F89BAC007B8ABF /* HoundifyPhraseSpotter.framework in Frameworks */,
+				9113A46923F8BBAB007B8ABF /* Reductio in Frameworks */,
 				9155188E23F868AA00C23C66 /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +278,7 @@
 			name = Eloquent;
 			packageProductDependencies = (
 				9155188D23F868AA00C23C66 /* Kanna */,
+				9113A46823F8BBAB007B8ABF /* Reductio */,
 			);
 			productName = Eloquent;
 			productReference = 912068AF23F7C294004A0DC8 /* Eloquent.app */;
@@ -329,6 +332,7 @@
 			mainGroup = 912068A623F7C294004A0DC8;
 			packageReferences = (
 				9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */,
+				9113A46723F8BBAB007B8ABF /* XCRemoteSwiftPackageReference "Reductio" */,
 			);
 			productRefGroup = 912068B023F7C294004A0DC8 /* Products */;
 			projectDirPath = "";
@@ -665,6 +669,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9113A46723F8BBAB007B8ABF /* XCRemoteSwiftPackageReference "Reductio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quinquice/Reductio";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tid-kijyun/Kanna";
@@ -676,6 +688,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9113A46823F8BBAB007B8ABF /* Reductio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9113A46723F8BBAB007B8ABF /* XCRemoteSwiftPackageReference "Reductio" */;
+			productName = Reductio;
+		};
 		9155188D23F868AA00C23C66 /* Kanna */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */;
