@@ -16,7 +16,7 @@ extension User {
         let controller = DataController.shared
         let users = controller.fetchAllObjects(for: User.fetchRequest())
         let earliestUser = users.max { (first, second) -> Bool in
-            first.dateCreated! < second.dateCreated!
+            first.dateCreated! > second.dateCreated!    // If conflict, use the earliest created
         }
         if let foundUser = earliestUser {
             return foundUser
@@ -25,7 +25,7 @@ extension User {
         let newUser = controller.create(new: User.self)
         newUser.firstName = "Cliff"
         newUser.lastName = "Panos"
-        newUser.imageData = UIImage(named: "Contact-Default")!.pngData()
+        newUser.contactImage = UIImage(named: "Contact-Default")!
         newUser.dateCreated = Date()
         return newUser
     }()

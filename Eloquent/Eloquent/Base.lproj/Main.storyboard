@@ -325,7 +325,6 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUserButton" value="YES"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="displayUser" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -348,7 +347,6 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayUserButton" value="YES"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="displayUser" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
