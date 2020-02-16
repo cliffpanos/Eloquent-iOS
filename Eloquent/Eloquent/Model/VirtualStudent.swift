@@ -15,26 +15,29 @@ class VirtualStudent {
     var tries : Int = 0
 
     let MAX_TRIES = 2
+    let RATIO_LEFT = 0.4
 
     var keywords : [String]
     var numKeywords : Int
+
+    let tagger = NSLinguisticTagger(tagSchemes:[.lemma], options: 0) 
+    let options: NSLinguisticTagger.Options = [.omitPunctuation, .omitWhitespace]
 
     init(topic : LearnItem) {
         self.topic = topic
         self.status = .unsatisfied("Explain \"\(topic.term)\" to me.")
         let st = SpeechText(text: topic.definition)
-        self.keywords = st.keywords
+        self.keywords = lemmatize(text: st.keywords.joined(separator: " "))
         self.numKeywords = keywords.count
     }
 
     func listenTo(text: String) -> StudentStatus {
-        let st = SpeechText(text: text)
-        for token in st.tokens {
-            if let index = keywords.firstIndex(of: token.parsedText) {
+        for lemma in lemmatize(text: text) {
+            if let index = keywords.firstIndex(of: lemma) {
                 keywords.remove(at: index)
             }
         }
-        if tries < MAX_TRIES && !keywords.isEmpty {
+        if tries < MAX_TRIES && (Double(keywords.count) > RATIO_LEFT * Double(numKeywords))  {
             let prompt = keywords.randomElement()
             status = .unsatisfied("How is that related to \"\(prompt!)\"?")
             tries += 1
@@ -44,5 +47,17 @@ class VirtualStudent {
         let ld = LearnData(coverage: coverage)
         status = .satisfied(ld)
         return status
+    }
+
+    private func lemmatize(text: String) -> [String] {
+        lemmas = [String]()
+        tagger.string = text
+        let range = NSRange(location:0, length: text.utf16.count)
+        tagger.enumerateTags(in: range, unit: .word, scheme: .lemma, options: options) { tag, tokenRange, stop in
+            if let lemma = tag?.rawValue {
+                lemmas.append(lemma)
+            }
+        }
+        return lemmas
     }
 }

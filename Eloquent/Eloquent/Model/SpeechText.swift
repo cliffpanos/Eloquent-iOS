@@ -79,6 +79,13 @@ class SpeechText {
         return rawText.keywords
     }
 
+    var sentiment : Double {
+        let tagger = NLTagger(tagSchemes: [.sentimentScore])
+        tagger.string = rawText
+        let (sentiment, _) = tagger.tag(at: rawText.startIndex, unit: .document, scheme: .sentimentScore)
+        return Double(sentiment?.rawValue ?? "0") ?? 0
+    }
+
 
     var wordFreq : [String : Int] {
         var freq = [String : Int]()
