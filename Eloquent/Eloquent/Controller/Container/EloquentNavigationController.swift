@@ -58,8 +58,14 @@ class EloquentNavigationController: UINavigationController {
         }
     }
     
+    private var cardTransitioningDelegate = CardTransitioningDelegate()
+    
     @objc private func userBarButtonTapped(_ sender: Any?) {
-        // Show personal info card
+        let personalVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "personalPreviewVC")
+        self.cardTransitioningDelegate = CardTransitioningDelegate()
+        personalVC.modalPresentationStyle = .custom
+        personalVC.transitioningDelegate = cardTransitioningDelegate
+        self.present(personalVC, animated: true, completion: nil)
     }
 
 }

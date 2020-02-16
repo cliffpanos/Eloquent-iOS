@@ -46,6 +46,9 @@
 		91BB04F423F918E00097EA9E /* VirtualStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F123F918E00097EA9E /* VirtualStudent.swift */; };
 		91BB04F623F9288D0097EA9E /* EloquentGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F523F9288D0097EA9E /* EloquentGradientView.swift */; };
 		91BB04F823F935A50097EA9E /* ExplainTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F723F935A50097EA9E /* ExplainTermViewController.swift */; };
+		91BB04FD23F976E70097EA9E /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04FA23F976E60097EA9E /* CardPresentationController.swift */; };
+		91BB04FE23F976E70097EA9E /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04FB23F976E60097EA9E /* CardAnimationController.swift */; };
+		91BB04FF23F976E70097EA9E /* CardTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04FC23F976E60097EA9E /* CardTransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +117,9 @@
 		91BB04F123F918E00097EA9E /* VirtualStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualStudent.swift; sourceTree = "<group>"; };
 		91BB04F523F9288D0097EA9E /* EloquentGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentGradientView.swift; sourceTree = "<group>"; };
 		91BB04F723F935A50097EA9E /* ExplainTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainTermViewController.swift; sourceTree = "<group>"; };
+		91BB04FA23F976E60097EA9E /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
+		91BB04FB23F976E60097EA9E /* CardAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAnimationController.swift; sourceTree = "<group>"; };
+		91BB04FC23F976E60097EA9E /* CardTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,7 @@
 				9113A46C23F8D5CB007B8ABF /* Speaking */,
 				9113A46D23F8D5E9007B8ABF /* Personal */,
 				9155188723F8679D00C23C66 /* Container */,
+				91BB04F923F976D90097EA9E /* Transition */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,6 +310,16 @@
 				9155189F23F88CD200C23C66 /* Core.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		91BB04F923F976D90097EA9E /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				91BB04FB23F976E60097EA9E /* CardAnimationController.swift */,
+				91BB04FA23F976E60097EA9E /* CardPresentationController.swift */,
+				91BB04FC23F976E60097EA9E /* CardTransitioningDelegate.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +444,7 @@
 				91BB04F223F918E00097EA9E /* SpeechText.swift in Sources */,
 				915518A223F896EC00C23C66 /* RootViewController.swift in Sources */,
 				91BB04F623F9288D0097EA9E /* EloquentGradientView.swift in Sources */,
+				91BB04FD23F976E70097EA9E /* CardPresentationController.swift in Sources */,
 				91BB04EE23F90F5F0097EA9E /* AddQuizletViewController.swift in Sources */,
 				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
 				91BB04F823F935A50097EA9E /* ExplainTermViewController.swift in Sources */,
@@ -439,7 +457,9 @@
 				912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */,
 				915518A023F88CD200C23C66 /* Core.swift in Sources */,
 				9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */,
+				91BB04FF23F976E70097EA9E /* CardTransitioningDelegate.swift in Sources */,
 				9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */,
+				91BB04FE23F976E70097EA9E /* CardAnimationController.swift in Sources */,
 				9113A46323F8A4EA007B8ABF /* UserBarButtonItem.swift in Sources */,
 				91238CD023F8E2C500A0A703 /* SpeakCaptureContentViewController.swift in Sources */,
 				9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */,

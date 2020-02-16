@@ -10,6 +10,10 @@ import UIKit
 
 extension UIViewController {
     
+    @IBAction public func dismissForIBButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Public
     
     public func presentAlert(_ title: String?, message: String?, completion: (() -> (Void))? = nil) {
