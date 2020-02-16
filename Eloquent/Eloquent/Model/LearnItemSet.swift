@@ -20,4 +20,8 @@ public class LearnItemSet: NSObject {
         self.items = items
     }
     
+    public override var description: String {
+        return "Set \"\(name)\" — \(items.count) terms"
+    }
+    
 }

@@ -25,13 +25,12 @@ public class QuizletSetExtractor: NSObject {
             let htmlData: String
             do {
                 try htmlData = String(contentsOf: self.itemSetURL)
-                print(htmlData)
             } catch let error {
-                print(error)
-                
                 DispatchQueue.main.async {
+                    print(error)
                     completion(nil)
                 }
+                return
             }
             
             // Parse the data into items
@@ -47,7 +46,7 @@ public class QuizletSetExtractor: NSObject {
             }
             
             // Configure the set
-            let name = doc.at_css(".UIHeading--one")!.text!
+            let name = doc.at_css(".UIHeading--one")?.text ?? "Practice Set"
             let itemSet = LearnItemSet(named: name, items: items)
             
             // Call the completion handler on the main queue

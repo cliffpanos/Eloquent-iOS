@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9113A45923F89BAC007B8ABF /* HoundifyPhraseSpotter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189C23F88C8D00C23C66 /* HoundifyPhraseSpotter.framework */; };
+		9113A45A23F89BAC007B8ABF /* HoundifyPhraseSpotter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189C23F88C8D00C23C66 /* HoundifyPhraseSpotter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9113A45C23F89BAE007B8ABF /* HoundifySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189923F88BF000C23C66 /* HoundifySDK.framework */; };
+		9113A45D23F89BAE007B8ABF /* HoundifySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9155189923F88BF000C23C66 /* HoundifySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9113A45F23F89D1A007B8ABF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A45E23F89D1A007B8ABF /* User.swift */; };
+		9113A46123F89F19007B8ABF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46023F89F19007B8ABF /* DataController.swift */; };
+		9113A46323F8A4EA007B8ABF /* UserBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */; };
+		9113A46623F8B367007B8ABF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9113A46523F8B367007B8ABF /* CloudKit.framework */; };
+		9113A46923F8BBAB007B8ABF /* Reductio in Frameworks */ = {isa = PBXBuildFile; productRef = 9113A46823F8BBAB007B8ABF /* Reductio */; };
 		912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B223F7C294004A0DC8 /* AppDelegate.swift */; };
 		912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B423F7C294004A0DC8 /* SceneDelegate.swift */; };
 		912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */; };
@@ -24,6 +33,9 @@
 		9155189123F86A0100C23C66 /* LearnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189023F86A0100C23C66 /* LearnItem.swift */; };
 		9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189223F86A5F00C23C66 /* LearnItemSet.swift */; };
 		9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */; };
+		9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189723F8730200C23C66 /* UIViewController+Alerts.swift */; };
+		915518A023F88CD200C23C66 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189F23F88CD200C23C66 /* Core.swift */; };
+		915518A223F896EC00C23C66 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915518A123F896EC00C23C66 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9113A45B23F89BAC007B8ABF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9113A45A23F89BAC007B8ABF /* HoundifyPhraseSpotter.framework in Embed Frameworks */,
+				9113A45D23F89BAE007B8ABF /* HoundifySDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9113A45E23F89D1A007B8ABF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9113A46023F89F19007B8ABF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBarButtonItem.swift; sourceTree = "<group>"; };
+		9113A46423F8B363007B8ABF /* Eloquent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eloquent.entitlements; sourceTree = "<group>"; };
+		9113A46523F8B367007B8ABF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		912068AF23F7C294004A0DC8 /* Eloquent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068B223F7C294004A0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912068B423F7C294004A0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +89,11 @@
 		9155189023F86A0100C23C66 /* LearnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItem.swift; sourceTree = "<group>"; };
 		9155189223F86A5F00C23C66 /* LearnItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItemSet.swift; sourceTree = "<group>"; };
 		9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSetExtractor.swift; sourceTree = "<group>"; };
+		9155189723F8730200C23C66 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		9155189923F88BF000C23C66 /* HoundifySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HoundifySDK.framework; sourceTree = "<group>"; };
+		9155189C23F88C8D00C23C66 /* HoundifyPhraseSpotter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HoundifyPhraseSpotter.framework; sourceTree = "<group>"; };
+		9155189F23F88CD200C23C66 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		915518A123F896EC00C23C66 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9113A45C23F89BAE007B8ABF /* HoundifySDK.framework in Frameworks */,
+				9113A46623F8B367007B8ABF /* CloudKit.framework in Frameworks */,
+				9113A45923F89BAC007B8ABF /* HoundifyPhraseSpotter.framework in Frameworks */,
+				9113A46923F8BBAB007B8ABF /* Reductio in Frameworks */,
 				9155188E23F868AA00C23C66 /* Kanna in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +125,7 @@
 				912068B123F7C294004A0DC8 /* Eloquent */,
 				912068CD23F7C296004A0DC8 /* EloquentTests */,
 				912068B023F7C294004A0DC8 /* Products */,
+				9155189B23F88C6C00C23C66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +141,9 @@
 		912068B123F7C294004A0DC8 /* Eloquent */ = {
 			isa = PBXGroup;
 			children = (
+				9113A46423F8B363007B8ABF /* Eloquent.entitlements */,
 				912068D923F7D40E004A0DC8 /* App */,
+				9155189E23F88CC100C23C66 /* Core */,
 				912068DA23F7D416004A0DC8 /* Controller */,
 				9155187F23F7FCA200C23C66 /* View */,
 				9155188F23F869E700C23C66 /* Model */,
@@ -135,6 +179,7 @@
 		912068DA23F7D416004A0DC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				915518A123F896EC00C23C66 /* RootViewController.swift */,
 				912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */,
 				912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */,
 				9155188A23F867ED00C23C66 /* AnalysisViewController.swift */,
@@ -155,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				9155188123F7FD0200C23C66 /* EloquentButton.swift */,
+				9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				9155188323F7FD4A00C23C66 /* UIView+Core.swift */,
+				9155189723F8730200C23C66 /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,6 +225,7 @@
 		9155188F23F869E700C23C66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9113A45E23F89D1A007B8ABF /* User.swift */,
 				9155189023F86A0100C23C66 /* LearnItem.swift */,
 				9155189223F86A5F00C23C66 /* LearnItemSet.swift */,
 			);
@@ -187,9 +235,28 @@
 		9155189423F86C7E00C23C66 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9113A46023F89F19007B8ABF /* DataController.swift */,
 				9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9155189B23F88C6C00C23C66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9113A46523F8B367007B8ABF /* CloudKit.framework */,
+				9155189923F88BF000C23C66 /* HoundifySDK.framework */,
+				9155189C23F88C8D00C23C66 /* HoundifyPhraseSpotter.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9155189E23F88CC100C23C66 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9155189F23F88CD200C23C66 /* Core.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +269,7 @@
 				912068AB23F7C294004A0DC8 /* Sources */,
 				912068AC23F7C294004A0DC8 /* Frameworks */,
 				912068AD23F7C294004A0DC8 /* Resources */,
+				9113A45B23F89BAC007B8ABF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +278,7 @@
 			name = Eloquent;
 			packageProductDependencies = (
 				9155188D23F868AA00C23C66 /* Kanna */,
+				9113A46823F8BBAB007B8ABF /* Reductio */,
 			);
 			productName = Eloquent;
 			productReference = 912068AF23F7C294004A0DC8 /* Eloquent.app */;
@@ -263,6 +332,7 @@
 			mainGroup = 912068A623F7C294004A0DC8;
 			packageReferences = (
 				9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */,
+				9113A46723F8BBAB007B8ABF /* XCRemoteSwiftPackageReference "Reductio" */,
 			);
 			productRefGroup = 912068B023F7C294004A0DC8 /* Products */;
 			projectDirPath = "";
@@ -303,13 +373,19 @@
 				912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */,
 				912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */,
 				9155189123F86A0100C23C66 /* LearnItem.swift in Sources */,
+				9113A45F23F89D1A007B8ABF /* User.swift in Sources */,
 				912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */,
+				915518A223F896EC00C23C66 /* RootViewController.swift in Sources */,
+				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
 				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
 				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,
 				9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */,
 				912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */,
+				915518A023F88CD200C23C66 /* Core.swift in Sources */,
+				9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */,
 				9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */,
+				9113A46323F8A4EA007B8ABF /* UserBarButtonItem.swift in Sources */,
 				9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,8 +546,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eloquent/Eloquent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V7HL83ZN6U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Eloquent",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Eloquent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,8 +571,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Eloquent/Eloquent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V7HL83ZN6U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Eloquent",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Eloquent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,6 +669,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9113A46723F8BBAB007B8ABF /* XCRemoteSwiftPackageReference "Reductio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quinquice/Reductio";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tid-kijyun/Kanna";
@@ -592,6 +688,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9113A46823F8BBAB007B8ABF /* Reductio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9113A46723F8BBAB007B8ABF /* XCRemoteSwiftPackageReference "Reductio" */;
+			productName = Reductio;
+		};
 		9155188D23F868AA00C23C66 /* Kanna */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9155188C23F868AA00C23C66 /* XCRemoteSwiftPackageReference "Kanna" */;

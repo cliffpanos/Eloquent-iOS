@@ -8,12 +8,18 @@
 
 import UIKit
 import CoreData
+import HoundifySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        DataController.shared.managedObjectContext = self.persistentContainer.viewContext
+        
+        Hound.setClientID(EloquentHoundified.clientID)
+        Hound.setClientKey(EloquentHoundified.clientKey)
+        
         return true
     }
     

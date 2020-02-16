@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class LearnItem {
+public class LearnItem: NSObject {
     
     public let term: String
     public let definition: String
@@ -16,6 +16,10 @@ public class LearnItem {
     public init(term: String, definition: String) {
         self.term = term
         self.definition = definition
+    }
+    
+    public override var description: String {
+        return "\(term) — \(definition)"
     }
     
 }

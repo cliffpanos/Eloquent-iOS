@@ -9,11 +9,19 @@
 import UIKit
 
 class EloquentNavigationController: UINavigationController {
+    
+    @IBInspectable var displayUser: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if displayUser {
+            let userItem = UserBarButtonItem.forCurrentUser(with: #selector(userBarButtonTapped(_:)))
+            if let first = self.viewControllers.first {
+                first.navigationItem.setRightBarButtonItems([userItem], animated: false)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,9 +52,13 @@ class EloquentNavigationController: UINavigationController {
         } else {
             let style = NSMutableParagraphStyle()
             style.alignment = .justified
-            style.firstLineHeadIndent = 26
+            style.firstLineHeadIndent = 28
             appearance.largeTitleTextAttributes[NSAttributedString.Key.paragraphStyle] = style
         }
+    }
+    
+    @objc private func userBarButtonTapped(_ sender: Any?) {
+        // Show personal info card
     }
 
 }

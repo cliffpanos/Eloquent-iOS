@@ -23,6 +23,13 @@ extension UIView {
     }
     
     ///
+    /// Sets the layer's corner curve to be continuous if available (iOS 13.0 or later)
+    ///
+    public func cornerContinuously() {
+        self.layer.cornerCurve = .continuous
+    }
+    
+    ///
     /// Set the receiver's corner radii such that it becomes circular
     ///
     public func roundCircularly() {
