@@ -200,7 +200,7 @@ public class ItemSetCollectionViewCell: UICollectionViewCell {
         didSet {
             let high = isHighlighted
             UIView.animate(withDuration: high ? 0.2 : 0.3) {
-                self.alpha = high ? 0.905 : 1.0
+                self.alpha = high ? 0.9 : 1.0
                 self.transform = high ? CGAffineTransform(scaleX: 0.97, y: 0.97) : .identity
             }
         }

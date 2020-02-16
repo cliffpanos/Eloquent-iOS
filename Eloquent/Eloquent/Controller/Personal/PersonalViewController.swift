@@ -1,5 +1,5 @@
 //
-//  AnalysisViewController.swift
+//  PersonalViewController.swift
 //  Eloquent
 //
 //  Created by Cliff Panos on 2/15/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnalysisViewController: UITableViewController {
+class PersonalViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,4 +72,13 @@ class AnalysisViewController: UITableViewController {
     }
     */
 
+}
+
+class PersonalCardViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.cornerContinuously()
+    }
 }

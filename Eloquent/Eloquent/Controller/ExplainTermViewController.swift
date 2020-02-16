@@ -89,7 +89,7 @@ class ExplainTermViewController: UIViewController {
     private var activeVoiceSearch: HoundVoiceSearchQuery? = nil {
         didSet {
             setSplashView(displayed: activeVoiceSearch != nil, animated: true)
-            if activeVoiceSearch == nil {
+            if activeVoiceSearch == nil && oldValue != nil {
                 self.processFinishedTranscript()
             }
         }
@@ -111,12 +111,11 @@ class ExplainTermViewController: UIViewController {
         
         let status = virtualStudent.listenTo(text: transcript)
         switch status {
-            case .satisfied(data):
-                if sufficientAnswer {
+            case .satisfied(let data):
+                print(data)
                 self.feedbackGenerator.notificationOccurred(.success)
-                }
                 self.displaySuccessButtonFeatures(true, animated: true)
-            case .unsatisfied(prompt):
+            case .unsatisfied(let prompt):
                 self.feedbackGenerator.notificationOccurred(.warning)
                 self.animateInFollowUpView(followUp: prompt)
         }
@@ -133,7 +132,6 @@ class ExplainTermViewController: UIViewController {
     }
     
     private func animateInFollowUpView(followUp followUpText: String) {
-        let currentTerm = self.itemSet.items[currentIndex].term
         let followUpView: UIView = oneFollowUpView.isHidden ? oneFollowUpView : twoFollowUpView
         let followUpLabel: UILabel = (followUpView == oneFollowUpView) ? oneFollowUpLabel : twoFollowUpLabel
         

@@ -85,7 +85,7 @@ class SpeakComposeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let captureController = segue.destination as? SpeakCaptureViewController {
-            captureController.speakingScript = self.textView.text
+            captureController.speakingScript = !self.textView.text.isEmpty ? self.textView.text : nil
         }
     }
     

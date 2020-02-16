@@ -31,7 +31,7 @@
 		9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188123F7FD0200C23C66 /* EloquentButton.swift */; };
 		9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188323F7FD4A00C23C66 /* UIView+Core.swift */; };
 		9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188523F8666F00C23C66 /* EloquentNavigationController.swift */; };
-		9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188A23F867ED00C23C66 /* AnalysisViewController.swift */; };
+		9155188B23F867ED00C23C66 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188A23F867ED00C23C66 /* PersonalViewController.swift */; };
 		9155188E23F868AA00C23C66 /* Kanna in Frameworks */ = {isa = PBXBuildFile; productRef = 9155188D23F868AA00C23C66 /* Kanna */; };
 		9155189123F86A0100C23C66 /* LearnItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189023F86A0100C23C66 /* LearnItem.swift */; };
 		9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189223F86A5F00C23C66 /* LearnItemSet.swift */; };
@@ -49,6 +49,7 @@
 		91BB04FD23F976E70097EA9E /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04FA23F976E60097EA9E /* CardPresentationController.swift */; };
 		91BB04FE23F976E70097EA9E /* CardAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04FB23F976E60097EA9E /* CardAnimationController.swift */; };
 		91BB04FF23F976E70097EA9E /* CardTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04FC23F976E60097EA9E /* CardTransitioningDelegate.swift */; };
+		91EC5B8023F9B07E002861D1 /* HorizontalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EC5B7F23F9B07E002861D1 /* HorizontalBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +102,7 @@
 		9155188123F7FD0200C23C66 /* EloquentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentButton.swift; sourceTree = "<group>"; };
 		9155188323F7FD4A00C23C66 /* UIView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
 		9155188523F8666F00C23C66 /* EloquentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentNavigationController.swift; sourceTree = "<group>"; };
-		9155188A23F867ED00C23C66 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		9155188A23F867ED00C23C66 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		9155189023F86A0100C23C66 /* LearnItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItem.swift; sourceTree = "<group>"; };
 		9155189223F86A5F00C23C66 /* LearnItemSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnItemSet.swift; sourceTree = "<group>"; };
 		9155189523F86CA800C23C66 /* QuizletSetExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizletSetExtractor.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		91BB04FA23F976E60097EA9E /* CardPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
 		91BB04FB23F976E60097EA9E /* CardAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAnimationController.swift; sourceTree = "<group>"; };
 		91BB04FC23F976E60097EA9E /* CardTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTransitioningDelegate.swift; sourceTree = "<group>"; };
+		91EC5B7F23F9B07E002861D1 /* HorizontalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +161,7 @@
 		9113A46D23F8D5E9007B8ABF /* Personal */ = {
 			isa = PBXGroup;
 			children = (
-				9155188A23F867ED00C23C66 /* AnalysisViewController.swift */,
+				9155188A23F867ED00C23C66 /* PersonalViewController.swift */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -250,6 +252,7 @@
 				9155188123F7FD0200C23C66 /* EloquentButton.swift */,
 				9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */,
 				91BB04F523F9288D0097EA9E /* EloquentGradientView.swift */,
+				91EC5B7F23F9B07E002861D1 /* HorizontalBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,13 +447,14 @@
 				91BB04F223F918E00097EA9E /* SpeechText.swift in Sources */,
 				915518A223F896EC00C23C66 /* RootViewController.swift in Sources */,
 				91BB04F623F9288D0097EA9E /* EloquentGradientView.swift in Sources */,
+				91EC5B8023F9B07E002861D1 /* HorizontalBarView.swift in Sources */,
 				91BB04FD23F976E70097EA9E /* CardPresentationController.swift in Sources */,
 				91BB04EE23F90F5F0097EA9E /* AddQuizletViewController.swift in Sources */,
 				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
 				91BB04F823F935A50097EA9E /* ExplainTermViewController.swift in Sources */,
 				91BB04F423F918E00097EA9E /* VirtualStudent.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
-				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
+				9155188B23F867ED00C23C66 /* PersonalViewController.swift in Sources */,
 				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,
 				9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */,
 				91238CCE23F8DAE400A0A703 /* UIColor+Core.swift in Sources */,

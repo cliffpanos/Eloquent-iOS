@@ -1,5 +1,6 @@
 import Foundation
 import Reductio
+import NaturalLanguage
 
 class Token {
     var rawText: String

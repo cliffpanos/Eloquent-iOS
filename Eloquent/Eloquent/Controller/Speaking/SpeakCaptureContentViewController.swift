@@ -13,7 +13,7 @@ class SpeakCaptureContentViewController: UIViewController {
 
     // It's totally valid to ad-lib
     public var speakingScript: String? = nil
-    public var speechBeginning: DispatchTime? = nil
+    public var speechBeginning: DispatchTime = DispatchTime.now()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,18 +66,34 @@ class SpeakCaptureContentViewController: UIViewController {
             voiceSearch.finishRecording()
         } else {
             self.startTranscription()
-//            self.presentHoundifyViewController(in: self, from: microphoneButton)
         }
     }
     
     private func startTranscription() {
-//        HoundVoiceSearch.instance().startListening { error in
-            let voiceSearch =  HoundVoiceSearch.instance().newVoiceSearch()
-            self.activeVoiceSearch = voiceSearch
-            voiceSearch.delegate = self
-            speechBeginning = DispatchTime.now()
-            voiceSearch.start()
-//        }
+        let voiceSearch =  HoundVoiceSearch.instance().newVoiceSearch()
+        self.speechBeginning = DispatchTime.now()
+        self.activeVoiceSearch = voiceSearch
+        voiceSearch.delegate = self
+        voiceSearch.start()
+    }
+    
+    private func displayNextButton() {
+        let nextItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(didTapNextButton(_:)))
+        self.parent?.navigationItem.setRightBarButton(nextItem, animated: true)
+    }
+    
+    private var resultReadyToPass: SpeechText!
+    @objc private func didTapNextButton(_ sender: Any) {
+        
+        var baselineSpeech: SpeechText? = nil
+        if let script = self.speakingScript {
+            baselineSpeech = SpeechText(text: script)
+        }
+        let startTime = self.speechBeginning
+        let nanoUptime = DispatchTime.now().uptimeNanoseconds - startTime.uptimeNanoseconds
+        let minutes = Double(nanoUptime) / 60_000_000_000.0
+        
+        SpeakResultsViewController.present(in: self.navigationController!, forOriginal: baselineSpeech, result: resultReadyToPass, elapsedTime: minutes)
     }
     
     private func presentHoundifyViewController(in viewController: UIViewController, from view: UIView) {
@@ -135,27 +151,13 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
     func houndVoiceSearchQuery(_ query: HoundVoiceSearchQuery, didReceiveSearchResult houndServer: HoundDataHoundServer, dictionary: [AnyHashable : Any]) {
 
         print("Did receive search result: \(dictionary)")
-        guard let text = houndServer.disambiguation?.choiceData.first?.formattedTranscription else {
+        guard let text = houndServer.disambiguation?.choiceData.first?.formattedTranscription, !text.isEmpty else {
             // No text recieved
             return
-        } 
-        let st = SpeechText(text: text)
-
-        // DATA for analytics or something
-        let fillers : Int = st.numFillers
-        let slangs : Int = st.numSlang
-        var similarity : Double? = nil
-        var wpm : Double? = nil
-        if let script = self.speakingScript {
-            similarity = st.similarity(to: SpeechText(text: script))
         }
-        if let startTime = self.speechBeginning {
-            let nanoUptime = DispatchTime.now().uptimeNanoseconds - startTime.uptimeNanoseconds
-            let minutes = Double(nanoUptime) / 60_000_000_000.0
-            wpm = Double(st.tokens.count) / minutes
-        }
-
-        print("fillers: \(fillers), slangs: \(slangs), similarity: \(similarity ?? -1), WPM: \(wpm ?? -1))")
+        
+        self.displayNextButton()
+        self.resultReadyToPass = SpeechText(text: text)
     }
 
     func houndVoiceSearchQuery(_ query: HoundVoiceSearchQuery, changedStateFrom oldState: HoundVoiceSearchQueryState, to newState: HoundVoiceSearchQueryState) {
@@ -173,6 +175,7 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
             break
         case .finished:
             activeVoiceSearch = nil
+//            self.displayNextButton()
 //            HoundVoiceSearch.instance().stopListening(completionHandler: nil)
         @unknown default:
             break
