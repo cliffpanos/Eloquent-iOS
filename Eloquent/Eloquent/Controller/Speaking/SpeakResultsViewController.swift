@@ -35,7 +35,7 @@ class SpeakResultsViewController: UIViewController {
         if let baseline = self.baselineSpeechText {
             similarity = st.similarity(to: baseline)
         }
-        self.wordsPerMinute = Double(st.tokens.count) / elapsedMinutes
+        self.wordsPerMinute = Int(Double(st.tokens.count) / elapsedMinutes)
         
         let keywords = st.keywords
         if keywords.count > 0 {
@@ -50,7 +50,8 @@ class SpeakResultsViewController: UIViewController {
         
         if let baseline = self.baselineSpeechText {
             let similarity = speechTextResult.similarity(to: baseline)
-            self.similarityPercentageLabel.text = "\(Int(similarity))%"
+            self.similarityPercentageLabel.text = "\(Int(similarity * 100))%"
+            self.similarity = similarity
         } else {
             self.similarityPercentageContainer.isHidden = true
         }
@@ -58,11 +59,24 @@ class SpeakResultsViewController: UIViewController {
         let meaningfulPercent = Int(contentPercent * 100)
         self.contentMeaningPercentageLabel.text = "\(meaningfulPercent)%"
         
-        let normalizedSentiment = (speechTextResult.sentiment + 1) / 2    // Convert to range [0, 1]
+        let normalizedSentiment = (speechTextResult.sentiment + 1.0) / 2.0    // Convert to range [0, 1]
         let sentimentPercentage = normalizedSentiment * 100
-        self.sentimentRatingLabel.text = "\(sentimentPercentage)%"
-
-//        print("fillers: \(fillers), slangs: \(slangs), similarity: \(similarity ?? -1), WPM: \(wpm ?? -1))")
+        print("Normalized sentiment: \(normalizedSentiment)")
+        self.sentimentRatingLabel.text = "\(Int(sentimentPercentage))%"
+    }
+    
+    private var viewHasAppeared = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !viewHasAppeared {
+            similarityBarView.layoutIfNeeded()
+            meaningfulBarView.layoutIfNeeded()
+            
+            self.similarityBarView.setPercent(Int((similarity ?? 0) * 100), animated: true)
+            self.meaningfulBarView.setPercent(Int(contentPercent * 100), animated: true)
+            viewHasAppeared = true
+        }
     }
     
     
@@ -70,7 +84,7 @@ class SpeakResultsViewController: UIViewController {
     
     private var fillerWordCount: Int!
     private var slangWordCount: Int!
-    private var wordsPerMinute = 0.0
+    private var wordsPerMinute: Int!
     private var contentPercent: Double!
     private var similarity: Double? = nil
     
@@ -82,7 +96,9 @@ class SpeakResultsViewController: UIViewController {
     @IBOutlet weak private var similarityPercentageLabel: UILabel!
     @IBOutlet weak private var contentMeaningPercentageLabel: UILabel!
     @IBOutlet weak private var sentimentRatingLabel: UILabel!
-
+    
+    @IBOutlet weak private var similarityBarView: HorizontalBarView!
+    @IBOutlet weak private var meaningfulBarView: HorizontalBarView!
 
     @IBOutlet weak private var container: UIView!
 

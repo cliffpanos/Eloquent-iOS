@@ -13,7 +13,7 @@ class SpeakCaptureContentViewController: UIViewController {
 
     // It's totally valid to ad-lib
     public var speakingScript: String? = nil
-    public var speechBeginning: DispatchTime = DispatchTime.now()
+    public var speechBeginning = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class SpeakCaptureContentViewController: UIViewController {
     
     private func startTranscription() {
         let voiceSearch =  HoundVoiceSearch.instance().newVoiceSearch()
-        self.speechBeginning = DispatchTime.now()
+        self.speechBeginning = Date()
         self.activeVoiceSearch = voiceSearch
         voiceSearch.delegate = self
         voiceSearch.start()
@@ -90,8 +90,8 @@ class SpeakCaptureContentViewController: UIViewController {
             baselineSpeech = SpeechText(text: script)
         }
         let startTime = self.speechBeginning
-        let nanoUptime = DispatchTime.now().uptimeNanoseconds - startTime.uptimeNanoseconds
-        let minutes = Double(nanoUptime) / 60_000_000_000.0
+        let minutes = Date().timeIntervalSince(startTime) / 60.0
+        print("MINUTES: \(minutes)")
         
         SpeakResultsViewController.present(in: self.navigationController!, forOriginal: baselineSpeech, result: resultReadyToPass, elapsedTime: minutes)
     }

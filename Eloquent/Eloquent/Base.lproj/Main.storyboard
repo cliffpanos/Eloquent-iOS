@@ -1227,7 +1227,7 @@
                                 <rect key="frame" x="32" y="104" width="311" height="650"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rbg-jN-NZD">
-                                        <rect key="frame" x="12" y="20" width="287" height="536.66666666666663"/>
+                                        <rect key="frame" x="12" y="20" width="287" height="475"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ivm-jd-ETq">
                                                 <rect key="frame" x="0.0" y="0.0" width="262" height="45.666666666666664"/>
@@ -1238,7 +1238,7 @@
                                                         <color key="textColor" name="Blue-Upper"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filler Words &amp; Hesitations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-hU-nVp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filler Words &amp; Hesitations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-hU-nVp">
                                                         <rect key="frame" x="60.333333333333329" y="0.0" width="201.66666666666669" height="45.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1255,7 +1255,7 @@
                                                         <color key="textColor" name="Blue-Lower"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slang Words Used" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-ui-hDp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slang Words Used" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-ui-hDp">
                                                         <rect key="frame" x="59.666666666666686" y="0.0" width="144" height="45.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1272,7 +1272,7 @@
                                                         <color key="textColor" name="Green-Upper"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Spoken Per Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mt8-86-yUp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Spoken Per Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mt8-86-yUp">
                                                         <rect key="frame" x="56.666666666666671" y="0.0" width="202.33333333333331" height="45.666666666666664"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1302,7 +1302,7 @@
                                                         <color key="textColor" name="Green-Lower"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nka-GJ-s3E">
+                                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nka-GJ-s3E" customClass="HorizontalBarView" customModule="Eloquent" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="71.666666666666686" width="287" height="48.333333333333343"/>
                                                         <color key="backgroundColor" name="Secondary"/>
                                                         <color key="tintColor" name="Secondary"/>
@@ -1342,10 +1342,10 @@
                                                         <color key="textColor" red="0.63742379946251437" green="0.54900002479553223" blue="0.46700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pw5-ER-vcd">
+                                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pw5-ER-vcd" customClass="HorizontalBarView" customModule="Eloquent" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="71.666666666666629" width="287" height="48.333333333333343"/>
-                                                        <color key="backgroundColor" red="0.40328959569539108" green="0.54900002479553223" blue="0.46700000762939453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="tintColor" red="0.4070163369" green="0.55010592940000003" blue="0.46665453909999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" name="Green-Lower"/>
+                                                        <color key="tintColor" name="Green-Lower"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
@@ -1374,17 +1374,17 @@
                                                     <constraint firstAttribute="height" constant="1" id="4c6-5o-Bxr"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J8i-XB-fP5">
-                                                <rect key="frame" x="0.0" y="491.00000000000006" width="287" height="45.666666666666686"/>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J8i-XB-fP5">
+                                                <rect key="frame" x="0.0" y="475" width="279" height="0.0"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Sentiment Positivity Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh0-B1-iXJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="216.33333333333334" height="45.666666666666664"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Sentiment Positivity Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eh0-B1-iXJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="208.33333333333334" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="251" text="0.4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRc-Mp-894">
-                                                        <rect key="frame" x="226.33333333333329" y="0.0" width="60.666666666666657" height="45.666666666666664"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" text="0.4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRc-Mp-894">
+                                                        <rect key="frame" x="218.33333333333331" y="0.0" width="60.666666666666686" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                                         <color key="textColor" name="Blue-Upper"/>
                                                         <nil key="highlightedColor"/>
@@ -1393,7 +1393,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="J8i-XB-fP5" secondAttribute="trailing" id="55i-Co-G2P"/>
+                                            <constraint firstAttribute="trailing" secondItem="J8i-XB-fP5" secondAttribute="trailing" constant="8" id="55i-Co-G2P"/>
                                             <constraint firstItem="qaU-e7-laS" firstAttribute="leading" secondItem="Rbg-jN-NZD" secondAttribute="leading" id="6VE-bR-fv6"/>
                                             <constraint firstAttribute="trailing" secondItem="qaU-e7-laS" secondAttribute="trailing" id="6nk-C0-zwb"/>
                                             <constraint firstItem="J8i-XB-fP5" firstAttribute="leading" secondItem="Rbg-jN-NZD" secondAttribute="leading" id="VuQ-dY-3Rk"/>
@@ -1444,7 +1444,9 @@
                         <outlet property="container" destination="I8U-7g-58E" id="mmk-nZ-EZD"/>
                         <outlet property="contentMeaningPercentageLabel" destination="VAV-71-Mb4" id="ktR-JM-E2f"/>
                         <outlet property="fillerCountLabel" destination="ixE-aw-ifG" id="Cbf-MG-w80"/>
+                        <outlet property="meaningfulBarView" destination="Pw5-ER-vcd" id="z3K-lL-u16"/>
                         <outlet property="sentimentRatingLabel" destination="jRc-Mp-894" id="fgc-gE-IiC"/>
+                        <outlet property="similarityBarView" destination="nka-GJ-s3E" id="gPQ-Sb-JyB"/>
                         <outlet property="similarityPercentageContainer" destination="qaU-e7-laS" id="fMW-9J-HCv"/>
                         <outlet property="similarityPercentageLabel" destination="jPU-rv-uNn" id="55P-00-mNc"/>
                         <outlet property="slangCountLabel" destination="235-jU-OYS" id="LRh-n8-WvB"/>

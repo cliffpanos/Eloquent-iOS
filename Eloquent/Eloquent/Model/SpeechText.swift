@@ -121,7 +121,8 @@ let fillers = [
     "umm", "um", "like",
     "literally", "basically",
     "technically", "ah",
-    "totally"
+    "totally", "blah",
+    "actually",
 ]
 
 let slang = [1 : [

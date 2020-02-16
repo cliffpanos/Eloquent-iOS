@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let TESTING = true
+public let TESTING = false
 
 public struct EloquentApp {
     
