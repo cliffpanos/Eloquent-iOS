@@ -19,7 +19,8 @@ class EloquentNavigationController: UINavigationController {
         if displayUser {
             let userItem = UserBarButtonItem.forCurrentUser(with: #selector(userBarButtonTapped(_:)))
             if let first = self.viewControllers.first {
-                first.navigationItem.setRightBarButtonItems([userItem], animated: false)
+                let rightItems = [userItem] + (first.navigationItem.rightBarButtonItems ?? [])
+                first.navigationItem.setRightBarButtonItems(rightItems, animated: false)
             }
         }
     }
