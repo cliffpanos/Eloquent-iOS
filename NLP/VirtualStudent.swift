@@ -21,9 +21,9 @@ class VirtualStudent {
 
     init(topic : LearnItem) {
         self.topic = topic
-        self.status = .unsatisfied("Explain \(topic.term) to me.")
+        self.status = .unsatisfied("Explain \"\(topic.term)\" to me.")
         let st = SpeechText(text: topic.definition)
-        self.keywords = st.keywords()
+        self.keywords = st.keywords
         self.numKeywords = keywords.count
     }
 
@@ -36,7 +36,7 @@ class VirtualStudent {
         }
         if tries < MAX_TRIES && !keywords.isEmpty {
             let prompt = keywords.randomElement()
-            status = .unsatisfied("How is that related to \(prompt!)?")
+            status = .unsatisfied("How is that related to \"\(prompt!)\"?")
             tries += 1
             return status
         }
