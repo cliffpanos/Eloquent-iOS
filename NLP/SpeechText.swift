@@ -1,4 +1,5 @@
 import Foundation
+// import Reductio
 
 class Token {
     var rawText: String
@@ -27,6 +28,8 @@ class SpeechText {
     var rawWords: [String]
     var tokens: [Token]
 
+    let KEYWEIGHT = 5.0
+
     init(text rawText: String){
         self.rawText = rawText
         self.rawWords = rawText.components(separatedBy: " ")
@@ -41,7 +44,28 @@ class SpeechText {
         return grams
     }
 
-    func keywords() -> [String] {
+    func similarity(to other: SpeechText) -> Double {
+        let freqA = self.wordFreq
+        let freqB = other.wordFreq
+        var totalWeight : Double = 0
+        var total : Double = 0
+        let keywords = self.keywords + self.keywords
+        for k in [String](freqA.keys) + [String](freqB.keys) {
+            if stopwords.contains(k) {
+                continue
+            } else {
+                let fa = freqA[k] ?? 0
+                let fb = freqB[k] ?? 0
+                let sim = 1 - (Double(abs(fa - fb)) / Double(max(fa, fb)))
+                let weight = Double(fa + fb) * (keywords.contains(k) ? KEYWEIGHT : 1)
+                totalWeight += weight
+                total += sim * weight
+            }
+        }
+        return total / totalWeight
+    }
+
+    var keywords : [String] {
         let KEYS = 5
         let keywords = tokens.filter{!$0.isStop}.map{$0.parsedText}.shuffled()
         if keywords.count > KEYS {
@@ -51,25 +75,10 @@ class SpeechText {
         }
     }
 
-    func similarity(to other: SpeechText) -> Double {
-        let freqA = self.wordFreq
-        let freqB = other.wordFreq
-        var totalWeight : Double = 0
-        var total : Double = 0
-        for k in [String](freqA.keys) + [String](freqB.keys) {
-            if stopwords.contains(k) {
-                continue
-            } else {
-                let fa = freqA[k] ?? 0
-                let fb = freqB[k] ?? 0
-                let sim = 1 - (Double(abs(fa - fb)) / Double(max(fa, fb)))
-                let weight = Double(fa + fb)
-                totalWeight += weight
-                total += sim * weight
-            }
-        }
-        return total / totalWeight
-    }
+    // var keywords : [String] {
+    //     return rawText.keywords
+    // }
+
 
     var wordFreq : [String : Int] {
         var freq = [String : Int]()
