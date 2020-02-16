@@ -164,43 +164,88 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="ItemSetCell" id="brv-UN-YCE">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemSetCell" id="brv-UN-YCE" customClass="ItemSetCollectionViewCell" customModule="Eloquent" customModuleProvider="target">
                                 <rect key="frame" x="72" y="0.0" width="231" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xEd-l2-Tjh">
                                     <rect key="frame" x="0.0" y="0.0" width="231" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGU-dH-hwz">
-                                            <rect key="frame" x="27" y="29" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38W-4J-OKg" customClass="EloquentGradientView" customModule="Eloquent" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="231" height="165"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.plaintext" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FHJ-CY-mmP">
+                                                    <rect key="frame" x="197" y="8.3333333333333304" width="26" height="25.666666666666668"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="Vhn-SV-qPQ"/>
+                                                        <constraint firstAttribute="width" constant="26" id="kd2-N2-6NS"/>
+                                                    </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FHJ-CY-mmP" secondAttribute="trailing" id="Hmx-uM-V0t"/>
+                                                <constraint firstItem="FHJ-CY-mmP" firstAttribute="top" secondItem="38W-4J-OKg" secondAttribute="topMargin" id="mnu-zA-rbM"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="13"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Title of Quizlet Set" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGU-dH-hwz">
+                                            <rect key="frame" x="12" y="11.999999999999996" width="177" height="52.666666666666657"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXA-aS-LcY">
-                                            <rect key="frame" x="35" y="58" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77 Terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXA-aS-LcY">
+                                            <rect key="frame" x="12" y="68.666666666666671" width="207" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYm-rv-pjF">
-                                            <rect key="frame" x="35" y="106" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYm-rv-pjF">
+                                            <rect key="frame" x="12" y="133.66666666666666" width="71.333333333333329" height="19.333333333333343"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KXA-aS-LcY" firstAttribute="top" secondItem="LGU-dH-hwz" secondAttribute="bottom" constant="4" id="1Dz-aE-ps2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dYm-rv-pjF" secondAttribute="bottom" id="4vH-5d-hpf"/>
+                                        <constraint firstAttribute="bottom" secondItem="38W-4J-OKg" secondAttribute="bottom" id="Lyh-Fg-7Zq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KXA-aS-LcY" secondAttribute="trailing" id="PyX-bZ-AuQ"/>
+                                        <constraint firstItem="LGU-dH-hwz" firstAttribute="top" secondItem="xEd-l2-Tjh" secondAttribute="topMargin" id="QJg-hc-NLw"/>
+                                        <constraint firstItem="dYm-rv-pjF" firstAttribute="leading" secondItem="xEd-l2-Tjh" secondAttribute="leadingMargin" id="UTl-4x-mdn"/>
+                                        <constraint firstItem="38W-4J-OKg" firstAttribute="leading" secondItem="xEd-l2-Tjh" secondAttribute="leading" id="UjC-gr-ruj"/>
+                                        <constraint firstItem="KXA-aS-LcY" firstAttribute="leading" secondItem="xEd-l2-Tjh" secondAttribute="leadingMargin" id="bEj-jB-Qq2"/>
+                                        <constraint firstItem="FHJ-CY-mmP" firstAttribute="leading" secondItem="LGU-dH-hwz" secondAttribute="trailing" constant="8" id="l3V-gW-zHy"/>
+                                        <constraint firstAttribute="trailing" secondItem="38W-4J-OKg" secondAttribute="trailing" id="nVd-XM-f7Z"/>
+                                        <constraint firstItem="LGU-dH-hwz" firstAttribute="leading" secondItem="xEd-l2-Tjh" secondAttribute="leadingMargin" id="r46-jf-qRZ"/>
+                                        <constraint firstItem="38W-4J-OKg" firstAttribute="top" secondItem="xEd-l2-Tjh" secondAttribute="top" id="wyd-kU-zMt"/>
+                                    </constraints>
+                                    <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
+                                    <variation key="widthClass=regular">
+                                        <edgeInsets key="layoutMargins" top="20" left="20" bottom="20" right="20"/>
+                                    </variation>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="231" height="165"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="13"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dateLabel" destination="dYm-rv-pjF" id="Ll9-YB-Qah"/>
+                                    <outlet property="gradientView" destination="38W-4J-OKg" id="fBb-TR-qKY"/>
+                                    <outlet property="itemCountLabel" destination="KXA-aS-LcY" id="IWT-Pd-upF"/>
+                                    <outlet property="titleLabel" destination="LGU-dH-hwz" id="cJA-nR-nnp"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -784,6 +829,7 @@
         <image name="Tab-Bar-Speak" width="27" height="27"/>
         <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
         <image name="doc.on.clipboard" catalog="system" width="117" height="128"/>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="doc.text.magnifyingglass" catalog="system" width="116" height="128"/>
         <image name="safari" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>

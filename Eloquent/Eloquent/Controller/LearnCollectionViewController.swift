@@ -14,19 +14,45 @@ private let reuseIdentifier = "ItemSetCell"
 /// The card collection view controller
 ///
 class LearnCollectionViewController: UICollectionViewController {
+    
+    var itemSets: [LearnItemSet] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        
+        self.collectionView!.collectionViewLayout = self.collectionViewLayout(for: traitCollection.horizontalSizeClass, size: self.view.bounds.size)
     }
     
+    func collectionViewLayout(for horizontalSizeClass: UIUserInterfaceSizeClass, size: CGSize) -> UICollectionViewLayout {
+        let regular = horizontalSizeClass == .regular
+        let medium = !regular && (size.width > 500)
+
+        //1
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        //2
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(150))
+        //3
+        let count = regular ? 3 : (medium ? 2 : 1)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: count)
+        group.interItemSpacing = .fixed((regular || medium) ? 16 : 8)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        let constantInset: CGFloat = regular ? 50 : self.view.layoutMargins.left
+        section.contentInsets = NSDirectionalEdgeInsets(top: constantInset / 2.0, leading: constantInset,
+                                                        bottom: constantInset, trailing: constantInset)
+        section.interGroupSpacing = 16
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (context) in
+            self.collectionView.collectionViewLayout = self.collectionViewLayout(for: self.traitCollection.horizontalSizeClass, size: size)
+        }, completion: nil)
+        
+        super.viewWillTransition(to: size, with: coordinator)
+    }
 
     
     // MARK: - Navigation
@@ -43,20 +69,18 @@ class LearnCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return itemSets.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ItemSetCollectionViewCell
+        cell.decorate(for: self.itemSets[indexPath.row])
     
         return cell
     }
@@ -97,10 +121,51 @@ class LearnCollectionViewController: UICollectionViewController {
 extension LearnCollectionViewController: AddQuizletViewControllerDelegate {
     
     func addQuizletController(_ controller: AddQuizletViewController, didFinishWithAddedItemSet itemSet: LearnItemSet) {
-        // DO SOMETHING with the new item
-        
         print("SUCCESSFULLY retrieved new item set: \(itemSet)")
+        
+        self.itemSets.append(itemSet)
+        self.collectionView.insertItems(at: [IndexPath(row: itemSets.count - 1, section: 0)])
+        
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - ItemSetCollectionViewCell
+
+public class ItemSetCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet private weak var gradientView: EloquentGradientView!
+    
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var itemCountLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        self.cornerContinuously()
+        self.gradientView.cornerContinuously()
+        self.gradientView.gradientColors = [UIColor(named: "Green-Upper")!, UIColor(named: "Green-Lower")!]
+    }
+    
+    public override var isHighlighted: Bool {
+        didSet {
+            let high = isHighlighted
+            UIView.animate(withDuration: high ? 0.2 : 0.3) {
+                self.alpha = high ? 0.85 : 1.0
+                self.transform = high ? CGAffineTransform(scaleX: 0.97, y: 0.97) : .identity
+            }
+        }
+    }
+    
+    func decorate(for itemSet: LearnItemSet) {
+        self.titleLabel.text = itemSet.name.capitalized
+        self.itemCountLabel.text = "\(itemSet.items.count) Items"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        self.dateLabel.text = "Created \(dateFormatter.string(from: itemSet.dateCreated))"
     }
     
 }
