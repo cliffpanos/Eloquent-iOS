@@ -21,6 +21,23 @@ class LearnCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         self.collectionView!.collectionViewLayout = self.collectionViewLayout(for: traitCollection.horizontalSizeClass, size: self.view.bounds.size)
+        
+        // TESTING
+        let urlStrings: [String] = [
+            "https://quizlet.com/145245325/midterm-review-flash-cards/",
+            "https://quizlet.com/190542265/world-war-2-people-flash-cards/",
+            "https://quizlet.com/419957631/psychology-flash-cards/",
+            "https://quizlet.com/hk/360473641/art-history-greek-art-flash-cards/",
+            "https://quizlet.com/408107038/roman-poets-latin-1-flash-cards/",
+        ]
+        for urlString in urlStrings {
+            let quizletExtractor = QuizletSetExtractor(setURL: URL(string: urlString)!)
+            quizletExtractor.extractItems { newItemSet in
+                guard let newItemSet = newItemSet else { return }
+                self.itemSets.append(newItemSet)
+                self.collectionView.insertItems(at: [IndexPath(row: self.itemSets.count - 1, section: 0)])
+            }
+        }
     }
     
     func collectionViewLayout(for horizontalSizeClass: UIUserInterfaceSizeClass, size: CGSize) -> UICollectionViewLayout {
@@ -38,7 +55,7 @@ class LearnCollectionViewController: UICollectionViewController {
         group.interItemSpacing = .fixed((regular || medium) ? 16 : 8)
         
         let section = NSCollectionLayoutSection(group: group)
-        let constantInset: CGFloat = regular ? 50 : self.view.layoutMargins.left
+        let constantInset: CGFloat = regular ? 50 : 16//self.view.layoutMargins.left
         section.contentInsets = NSDirectionalEdgeInsets(top: constantInset / 2.0, leading: constantInset,
                                                         bottom: constantInset, trailing: constantInset)
         section.interGroupSpacing = 16
@@ -61,6 +78,10 @@ class LearnCollectionViewController: UICollectionViewController {
         if let navigationVC = segue.destination as? UINavigationController {
             if let addQuizletVC = navigationVC.viewControllers.first as? AddQuizletViewController {
                 addQuizletVC.delegate = self
+            } else if let explainTermVC = navigationVC.viewControllers.first as? ExplainTermViewController,
+                let sender = sender as? UICollectionViewCell,
+                let indexPath = collectionView.indexPath(for: sender) {
+                explainTermVC.itemSet = self.itemSets[indexPath.row]
             }
         }
     }
@@ -153,7 +174,7 @@ public class ItemSetCollectionViewCell: UICollectionViewCell {
         didSet {
             let high = isHighlighted
             UIView.animate(withDuration: high ? 0.2 : 0.3) {
-                self.alpha = high ? 0.85 : 1.0
+                self.alpha = high ? 0.905 : 1.0
                 self.transform = high ? CGAffineTransform(scaleX: 0.97, y: 0.97) : .identity
             }
         }

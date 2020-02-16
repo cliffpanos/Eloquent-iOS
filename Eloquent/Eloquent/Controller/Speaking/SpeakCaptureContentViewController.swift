@@ -18,7 +18,6 @@ class SpeakCaptureContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.microphoneButton.lowAlphaLevel = 0.52
         self.updateLabels(forTranscript: "", animated: false)
         self.setSplashView(displayed: false, animated: false)
     }
@@ -169,7 +168,7 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
         case .recording:
             break
         case .searching:
-            break
+            activeVoiceSearch = nil
         case .speaking:
             break
         case .finished:

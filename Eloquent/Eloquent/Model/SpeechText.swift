@@ -62,7 +62,7 @@ class SpeechText {
                 total += sim * weight
             }
         }
-        return (1.0+ total) / (2.0 + totalWeight)
+        return (1.0 + total) / (2.0 + totalWeight)
     }
 
     // var keywords : [String] {

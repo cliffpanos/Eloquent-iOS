@@ -45,6 +45,7 @@
 		91BB04F323F918E00097EA9E /* Quizlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F023F918E00097EA9E /* Quizlet.swift */; };
 		91BB04F423F918E00097EA9E /* VirtualStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F123F918E00097EA9E /* VirtualStudent.swift */; };
 		91BB04F623F9288D0097EA9E /* EloquentGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F523F9288D0097EA9E /* EloquentGradientView.swift */; };
+		91BB04F823F935A50097EA9E /* ExplainTermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04F723F935A50097EA9E /* ExplainTermViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		91BB04F023F918E00097EA9E /* Quizlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quizlet.swift; sourceTree = "<group>"; };
 		91BB04F123F918E00097EA9E /* VirtualStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualStudent.swift; sourceTree = "<group>"; };
 		91BB04F523F9288D0097EA9E /* EloquentGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentGradientView.swift; sourceTree = "<group>"; };
+		91BB04F723F935A50097EA9E /* ExplainTermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainTermViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				915518A123F896EC00C23C66 /* RootViewController.swift */,
 				91BB04EB23F90A2B0097EA9E /* LearnCollectionViewController.swift */,
 				91BB04ED23F90F5F0097EA9E /* AddQuizletViewController.swift */,
+				91BB04F723F935A50097EA9E /* ExplainTermViewController.swift */,
 				9113A46C23F8D5CB007B8ABF /* Speaking */,
 				9113A46D23F8D5E9007B8ABF /* Personal */,
 				9155188723F8679D00C23C66 /* Container */,
@@ -426,6 +429,7 @@
 				91BB04F623F9288D0097EA9E /* EloquentGradientView.swift in Sources */,
 				91BB04EE23F90F5F0097EA9E /* AddQuizletViewController.swift in Sources */,
 				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
+				91BB04F823F935A50097EA9E /* ExplainTermViewController.swift in Sources */,
 				91BB04F423F918E00097EA9E /* VirtualStudent.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
 				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
