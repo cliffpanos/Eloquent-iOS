@@ -19,6 +19,7 @@ class SpeakCaptureContentViewController: UIViewController {
 
         self.microphoneButton.lowAlphaLevel = 0.52
         self.updateLabels(forTranscript: "", animated: false)
+        self.setSplashView(displayed: false, animated: false)
     }
     
     func updateLabels(forTranscript transcript: String, animated: Bool = true) {
@@ -36,13 +37,29 @@ class SpeakCaptureContentViewController: UIViewController {
         self.transcriptTextView.applyFade(withDuration: animated ? 0.1 : 0.0)
     }
     
+    func setSplashView(displayed: Bool, animated: Bool) {
+        UIView.animate(withDuration: animated ? 0.3 : 0.0) {
+            if displayed {
+                self.splashView.transform = .identity
+            } else {
+                self.splashView.transform = CGAffineTransform(translationX: 0, y: 150)
+            }
+        }
+    }
+    
+    
     // MARK: - Private
     
-    private var activeVoiceSearch: HoundVoiceSearchQuery? = nil
+    private var activeVoiceSearch: HoundVoiceSearchQuery? = nil {
+        didSet {
+            setSplashView(displayed: activeVoiceSearch != nil, animated: true)
+        }
+    }
     
     @IBOutlet weak private var microphoneButton: EloquentButton!
     @IBOutlet weak private var transcriptTextView: UITextView!
     @IBOutlet weak private var tickerLabel: UILabel!
+    @IBOutlet weak private var splashView: UIView!
     
     @IBAction private func didTapMicrophoneButton(_ sender: EloquentButton) {
         if let voiceSearch = activeVoiceSearch {
@@ -133,7 +150,7 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
         case .speaking:
             break
         case .finished:
-            break
+            activeVoiceSearch = nil
 //            HoundVoiceSearch.instance().stopListening(completionHandler: nil)
         @unknown default:
             break

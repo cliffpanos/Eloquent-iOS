@@ -20,8 +20,8 @@ public struct EloquentApp {
 
 public struct EloquentHoundified {
     
-    static let clientID: String = "2Nm4ZnlemxLQBDyhUcjicg=="
+    static let clientID: String = "DkmIXRiIQCX0aaFlYAo0Xg=="
     
-    static let clientKey: String = "i8HCIqqOe4nUKDW_lJjUI0sowMnF40JX8haQXqXrY1BFwdEnXSmLLBTgKLoDOr-QeNwRG4_e4qneKFrV8CX4XA=="
+    static let clientKey: String = "-6jqvxLr0r2dmxqY9sOGyFYPMroN867u84Oo2EJJ3mWwe_I7ypTszM9oKh5DlNiWq83W_b7jC4xJK4kwF1tlIA=="
     
 }

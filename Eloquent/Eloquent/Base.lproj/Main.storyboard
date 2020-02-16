@@ -470,6 +470,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="311" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-hb-diF">
+                                <rect key="frame" x="0.0" y="489" width="311" height="120"/>
+                                <color key="backgroundColor" name="Primary"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2Z-cd-ao6" customClass="EloquentButton" customModule="Eloquent" customModuleProvider="target">
                                 <rect key="frame" x="115.66666666666669" y="509" width="80" height="80"/>
                                 <constraints>
@@ -522,16 +526,21 @@
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="r2Z-cd-ao6" firstAttribute="centerX" secondItem="kk2-su-mwC" secondAttribute="centerX" id="7F5-XF-ncg"/>
+                            <constraint firstItem="nAK-hb-diF" firstAttribute="centerY" secondItem="r2Z-cd-ao6" secondAttribute="centerY" id="BQo-b9-zud"/>
                             <constraint firstItem="K5x-t5-JSV" firstAttribute="top" secondItem="kk2-su-mwC" secondAttribute="topMargin" constant="16" id="CL5-8Z-i0a"/>
+                            <constraint firstAttribute="trailing" secondItem="nAK-hb-diF" secondAttribute="trailing" id="JRN-1N-5ne"/>
                             <constraint firstAttribute="trailingMargin" secondItem="K5x-t5-JSV" secondAttribute="trailing" constant="16" id="NQI-56-aQd"/>
                             <constraint firstItem="K5x-t5-JSV" firstAttribute="leading" secondItem="kk2-su-mwC" secondAttribute="leadingMargin" constant="16" id="R5j-de-YxY"/>
+                            <constraint firstAttribute="bottom" secondItem="nAK-hb-diF" secondAttribute="bottom" id="cMb-EU-eIP"/>
                             <constraint firstItem="r2Z-cd-ao6" firstAttribute="top" secondItem="K5x-t5-JSV" secondAttribute="bottom" constant="100" id="kSJ-CH-vwX"/>
                             <constraint firstAttribute="bottomMargin" secondItem="r2Z-cd-ao6" secondAttribute="bottom" constant="20" id="qj0-tM-vFW"/>
+                            <constraint firstItem="nAK-hb-diF" firstAttribute="leading" secondItem="kk2-su-mwC" secondAttribute="leading" id="ugp-4K-wsE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uu8-L5-WKm"/>
                     </view>
                     <connections>
                         <outlet property="microphoneButton" destination="r2Z-cd-ao6" id="IMd-U9-tNO"/>
+                        <outlet property="splashView" destination="nAK-hb-diF" id="zCv-tN-1c5"/>
                         <outlet property="tickerLabel" destination="J6h-I0-gU8" id="Luj-ZT-wU3"/>
                         <outlet property="transcriptTextView" destination="0gt-mp-9vp" id="W6Z-gY-CW9"/>
                     </connections>
