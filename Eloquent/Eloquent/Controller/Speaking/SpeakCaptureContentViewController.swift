@@ -13,6 +13,7 @@ class SpeakCaptureContentViewController: UIViewController {
 
     // It's totally valid to ad-lib
     public var speakingScript: String? = nil
+    public var speechBeginning: DispatchTime? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class SpeakCaptureContentViewController: UIViewController {
             let voiceSearch =  HoundVoiceSearch.instance().newVoiceSearch()
             self.activeVoiceSearch = voiceSearch
             voiceSearch.delegate = self
+            speechBeginning = DispatchTime.now()
             voiceSearch.start()
 //        }
     }
@@ -134,6 +136,28 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
     func houndVoiceSearchQuery(_ query: HoundVoiceSearchQuery, didReceiveSearchResult houndServer: HoundDataHoundServer, dictionary: [AnyHashable : Any]) {
 
         print("Did receive search result: \(dictionary)")
+        let text = houndServer.disambiguation.choiceData?.first?.formattedTranscription
+        guard let text = text else {
+            //No text recieved
+            return
+        } 
+        let st = SpeechText(text: text)
+
+        // DATA for analytics or something
+        let fillers : Int = st.numFillers
+        let slangs : Int = st.numSlangs
+        var similarity : Double? = nil
+        var wpm : Double? = nil
+        if let script = self.speakingScript {
+            similarity = st.similarity(to: SpeechText(text: script))
+        }
+        if let startTime = self.speechBeginning {
+            let nanoUptime = DispatchTime.now().uptimeNanoseconds - startTime.uptimeNanoseconds
+            let minutes = Double(nanoUptime) / 60_000_000_000.0
+            wpm = Double(st.tokens.count) / minutes
+        }
+
+        print("fillers: \(fillers), slangs: \(slangs), similarity: \(similarity), WPM: \(wpm)")
     }
 
     func houndVoiceSearchQuery(_ query: HoundVoiceSearchQuery, changedStateFrom oldState: HoundVoiceSearchQueryState, to newState: HoundVoiceSearchQueryState) {

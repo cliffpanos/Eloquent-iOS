@@ -33,21 +33,9 @@ public class QuizletSetExtractor: NSObject {
                 return
             }
             
-            // Parse the data into items
-            var items = [LearnItem]()
-            let doc = (try? HTML(html: htmlData, encoding: .utf8))!
-            for node in doc.css(".SetPageTerm-content") {
-                let termDef = node.css(".TermText")
-                if let term = termDef[0].text {
-                    if let def = termDef[1].text {
-                        items.append(LearnItem(term: term, definition: def))
-                    }
-                }
-            }
-            
-            // Configure the set
-            let name = doc.at_css(".UIHeading--one")?.text ?? "Practice Set"
-            let itemSet = LearnItemSet(named: name, items: items)
+            // Parse the data into items and configure the set
+            let quiz = Quizlet(htmlData: htmlData)
+            let itemSet = LearnItemSet(named: quiz.title, items: quiz.cards)
             
             // Call the completion handler on the main queue
             DispatchQueue.main.async {
