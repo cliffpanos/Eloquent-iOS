@@ -34,6 +34,7 @@ class SpeechText {
     init(text rawText: String){
         self.rawText = rawText
         self.rawWords = rawText.components(separatedBy: " ")
+            .filter{!$0.isEmpty}
         self.tokens = rawWords.map{Token(word: $0)}
     }
 

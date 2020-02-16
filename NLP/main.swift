@@ -23,4 +23,6 @@ print(vs.status)
 
 let st = SpeechText(text: ww2Text)
 let st2 = SpeechText(text: ww2Text2)
+let st3 = SpeechText(text: "")
+print(st3.tokens.count)
 print(st.similarity(to: st2))
