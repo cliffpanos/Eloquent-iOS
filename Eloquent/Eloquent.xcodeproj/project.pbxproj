@@ -20,7 +20,6 @@
 		9113A46F23F8D606007B8ABF /* SpeakResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46E23F8D606007B8ABF /* SpeakResultsViewController.swift */; };
 		912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B223F7C294004A0DC8 /* AppDelegate.swift */; };
 		912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B423F7C294004A0DC8 /* SceneDelegate.swift */; };
-		912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */; };
 		912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */; };
 		912068BC23F7C294004A0DC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912068BA23F7C294004A0DC8 /* Main.storyboard */; };
 		912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 912068BD23F7C294004A0DC8 /* Eloquent.xcdatamodeld */; };
@@ -40,6 +39,8 @@
 		9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189723F8730200C23C66 /* UIViewController+Alerts.swift */; };
 		915518A023F88CD200C23C66 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155189F23F88CD200C23C66 /* Core.swift */; };
 		915518A223F896EC00C23C66 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915518A123F896EC00C23C66 /* RootViewController.swift */; };
+		91BB04EC23F90A2B0097EA9E /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04EB23F90A2B0097EA9E /* LearnCollectionViewController.swift */; };
+		91BB04EE23F90F5F0097EA9E /* AddQuizletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BB04ED23F90F5F0097EA9E /* AddQuizletViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +79,6 @@
 		912068AF23F7C294004A0DC8 /* Eloquent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068B223F7C294004A0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912068B423F7C294004A0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCollectionViewController.swift; sourceTree = "<group>"; };
 		912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakComposeViewController.swift; sourceTree = "<group>"; };
 		912068BB23F7C294004A0DC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		912068BE23F7C294004A0DC8 /* Eloquent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Eloquent.xcdatamodel; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		9155189C23F88C8D00C23C66 /* HoundifyPhraseSpotter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HoundifyPhraseSpotter.framework; sourceTree = "<group>"; };
 		9155189F23F88CD200C23C66 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		915518A123F896EC00C23C66 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		91BB04EB23F90A2B0097EA9E /* LearnCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnCollectionViewController.swift; sourceTree = "<group>"; };
+		91BB04ED23F90F5F0097EA9E /* AddQuizletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuizletViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				915518A123F896EC00C23C66 /* RootViewController.swift */,
-				912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */,
+				91BB04EB23F90A2B0097EA9E /* LearnCollectionViewController.swift */,
+				91BB04ED23F90F5F0097EA9E /* AddQuizletViewController.swift */,
 				9113A46C23F8D5CB007B8ABF /* Speaking */,
 				9113A46D23F8D5E9007B8ABF /* Personal */,
 				9155188723F8679D00C23C66 /* Container */,
@@ -398,14 +401,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */,
+				91BB04EC23F90A2B0097EA9E /* LearnCollectionViewController.swift in Sources */,
 				912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */,
-				912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */,
 				9155189123F86A0100C23C66 /* LearnItem.swift in Sources */,
 				9113A46F23F8D606007B8ABF /* SpeakResultsViewController.swift in Sources */,
 				9113A45F23F89D1A007B8ABF /* User.swift in Sources */,
 				912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */,
 				9113A46B23F8D3EB007B8ABF /* SpeakCaptureViewController.swift in Sources */,
 				915518A223F896EC00C23C66 /* RootViewController.swift in Sources */,
+				91BB04EE23F90F5F0097EA9E /* AddQuizletViewController.swift in Sources */,
 				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
 				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,

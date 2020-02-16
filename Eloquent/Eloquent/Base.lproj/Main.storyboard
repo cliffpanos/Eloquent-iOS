@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,6 +32,189 @@
             </objects>
             <point key="canvasLocation" x="1659.4202898550725" y="-320.08928571428572"/>
         </scene>
+        <!--Add Quizlet View Controller-->
+        <scene sceneID="ufh-QG-HvN">
+            <objects>
+                <viewController id="Jmf-PJ-o9N" customClass="AddQuizletViewController" customModule="Eloquent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="Odg-dR-h96">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nog-Ib-ngN" customClass="EloquentButton" customModule="Eloquent" customModuleProvider="target">
+                                <rect key="frame" x="16" y="658" width="343" height="50"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Ez-Xg-zGa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                <state key="normal" title="Import Study Set" image="square.and.arrow.down.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapImport:" destination="Jmf-PJ-o9N" eventType="touchUpInside" id="jUV-67-Hk6"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="E7U-8B-3Aq">
+                                <rect key="frame" x="30" y="81" width="315" height="263.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Set from Quizlet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iiw-TE-z4x">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="81.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Quizlet URL here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wS0-6s-6BN">
+                                        <rect key="frame" x="0.0" y="105.33333333333334" width="315" height="50"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Gk9-KQ-ghp"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="url"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qv-fy-qEz" customClass="EloquentButton" customModule="Eloquent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="179.33333333333331" width="315" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="47N-1S-kHY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="tintColor" name="Tertiary"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                        <state key="normal" title="Paste URL from Clipboard" image="doc.on.clipboard" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapPaste:" destination="Jmf-PJ-o9N" eventType="touchUpInside" id="cVN-Ej-Gii"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIK-Rz-KPp" customClass="EloquentButton" customModule="Eloquent" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="233.33333333333331" width="315" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="A1d-iG-FaW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="tintColor" name="Tertiary"/>
+                                        <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                        <state key="normal" title="Open Quizlet" image="safari" catalog="system">
+                                            <color key="titleColor" name="Tertiary"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapOpenSafari:" destination="Jmf-PJ-o9N" eventType="touchUpInside" id="K7I-Rb-eID"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="E7U-8B-3Aq" firstAttribute="centerX" secondItem="Odg-dR-h96" secondAttribute="centerX" id="6cK-k8-eiB"/>
+                            <constraint firstItem="Nog-Ib-ngN" firstAttribute="leading" secondItem="Odg-dR-h96" secondAttribute="leadingMargin" id="PsI-gs-7qD"/>
+                            <constraint firstItem="E7U-8B-3Aq" firstAttribute="top" secondItem="pil-6m-g1G" secondAttribute="top" constant="25" id="R7G-ZB-HBo"/>
+                            <constraint firstItem="pil-6m-g1G" firstAttribute="trailing" secondItem="E7U-8B-3Aq" secondAttribute="trailing" constant="30" id="aci-fz-9yM"/>
+                            <constraint firstItem="pil-6m-g1G" firstAttribute="bottom" secondItem="Nog-Ib-ngN" secondAttribute="bottom" constant="16" id="ec3-el-jzs"/>
+                            <constraint firstItem="E7U-8B-3Aq" firstAttribute="leading" secondItem="pil-6m-g1G" secondAttribute="leading" constant="30" id="iTi-bJ-tVl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nog-Ib-ngN" secondAttribute="trailing" id="veI-J2-xo4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pil-6m-g1G"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6mX-Iy-q3U" appends="YES" id="4RV-dJ-B42"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2rq-Zb-NPy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="e5d-mq-VFZ">
+                            <color key="tintColor" name="Primary"/>
+                            <connections>
+                                <action selector="didTapCancel:" destination="Jmf-PJ-o9N" id="fdY-nA-rRH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="importButton" destination="Nog-Ib-ngN" id="hHh-9m-rDw"/>
+                        <outlet property="textField" destination="wS0-6s-6BN" id="tI7-w1-CWI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcf-Pt-0t8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6mX-Iy-q3U">
+                    <connections>
+                        <action selector="didTapView:" destination="Jmf-PJ-o9N" id="hGI-gr-xff"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="4191.1999999999998" y="-1035.2216748768474"/>
+        </scene>
+        <!--Learn-->
+        <scene sceneID="5UG-z2-RqR">
+            <objects>
+                <collectionViewController id="4MX-Nx-9Ff" customClass="LearnCollectionViewController" customModule="Eloquent" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oan-Au-dph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fXN-m0-Ihx">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="brv-UN-YCE">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xEd-l2-Tjh">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="4MX-Nx-9Ff" id="heK-pt-avK"/>
+                            <outlet property="delegate" destination="4MX-Nx-9Ff" id="HiX-34-uvK"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Learn" id="yUm-92-bJ0">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Plus-Bar-button" id="wR4-lt-Wuf">
+                            <connections>
+                                <segue destination="Qxi-7p-za0" kind="popoverPresentation" popoverAnchorBarButtonItem="wR4-lt-Wuf" id="cWm-Ie-1X1">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Q3-T6-vVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2471" y="-327"/>
+        </scene>
         <!--Speak-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -52,7 +236,7 @@
                                         <color key="tintColor" name="Tertiary"/>
                                         <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
-                                        <state key="normal" title="Paste from Clipboard" image="paperclip.circle" catalog="system">
+                                        <state key="normal" title="Paste from Clipboard" image="doc.on.clipboard" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -354,7 +538,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="displayUser" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="dwX-uu-7yi"/>
+                        <segue destination="4MX-Nx-9Ff" kind="relationship" relationship="rootViewController" id="WNA-W5-wa8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDS-xy-prf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -549,15 +733,36 @@
             </objects>
             <point key="canvasLocation" x="3604" y="358"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="94q-zQ-xyA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qxi-7p-za0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NCM-qv-HSe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jmf-PJ-o9N" kind="relationship" relationship="rootViewController" id="LY9-Pc-4au"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4rL-VP-wxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3248.8000000000002" y="-1035.2216748768474"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Contact-Default" width="33" height="33"/>
         <image name="Microphone-Button" width="80" height="80"/>
+        <image name="Plus-Bar-button" width="30" height="30"/>
         <image name="Tab-Bar-Card" width="20" height="25"/>
         <image name="Tab-Bar-Speak" width="27" height="27"/>
         <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
+        <image name="doc.on.clipboard" catalog="system" width="117" height="128"/>
         <image name="doc.text.magnifyingglass" catalog="system" width="116" height="128"/>
-        <image name="paperclip.circle" catalog="system" width="128" height="121"/>
+        <image name="safari" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
         <namedColor name="Primary">
             <color red="0.67400002479553223" green="0.86500000953674316" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
