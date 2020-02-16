@@ -2,19 +2,11 @@ import Foundation
 import FoundationNetworking
 import Kanna
 
-class FlashCard {
-    let term : String
-    let definition : String
-    init(term: String, definition: String) {
-        self.term = term
-        self.definition = definition
-    }
-}
-
 class Quizlet {
     var url: URL
     var name: String
-    var cards: [FlashCard]
+    var cards: [LearnItem]
+    var title: String
     init(url urlString: String) {
         self.url = URL(string: urlString)!
         self.cards = []
@@ -25,7 +17,7 @@ class Quizlet {
             let termDef = node.css(".TermText")
             if let term = termDef[0].text {
                 if let def = termDef[1].text {
-                    cards.append(FlashCard(term: term, definition: def))
+                    cards.append(LearnItem(term: term, definition: def))
                 }
             }
         }
