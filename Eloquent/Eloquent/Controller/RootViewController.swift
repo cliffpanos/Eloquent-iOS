@@ -54,7 +54,8 @@ class RootViewController: UITabBarController {
     
     private func configureAudioCategory() {
         do {
-            try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: [.mixWithOthers])
+            try audioSession.setActive(true, options: [])
         } catch {
             fatalError("[AVAudioSesssion] FAILED to configure the audio session: \(error)")
         }

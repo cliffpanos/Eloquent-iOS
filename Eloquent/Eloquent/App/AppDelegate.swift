@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Hound.setClientID(EloquentHoundified.clientID)
         Hound.setClientKey(EloquentHoundified.clientKey)
         
+        application.applicationSupportsShakeToEdit = true
+        
         return true
     }
     

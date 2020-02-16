@@ -16,6 +16,8 @@
 		9113A46323F8A4EA007B8ABF /* UserBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */; };
 		9113A46623F8B367007B8ABF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9113A46523F8B367007B8ABF /* CloudKit.framework */; };
 		9113A46923F8BBAB007B8ABF /* Reductio in Frameworks */ = {isa = PBXBuildFile; productRef = 9113A46823F8BBAB007B8ABF /* Reductio */; };
+		9113A46B23F8D3EB007B8ABF /* SpeakCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46A23F8D3EB007B8ABF /* SpeakCaptureViewController.swift */; };
+		9113A46F23F8D606007B8ABF /* SpeakResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113A46E23F8D606007B8ABF /* SpeakResultsViewController.swift */; };
 		912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B223F7C294004A0DC8 /* AppDelegate.swift */; };
 		912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B423F7C294004A0DC8 /* SceneDelegate.swift */; };
 		912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */; };
@@ -25,6 +27,8 @@
 		912068C123F7C296004A0DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 912068C023F7C296004A0DC8 /* Assets.xcassets */; };
 		912068C423F7C296004A0DC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912068C223F7C296004A0DC8 /* LaunchScreen.storyboard */; };
 		912068CF23F7C296004A0DC8 /* EloquentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912068CE23F7C296004A0DC8 /* EloquentTests.swift */; };
+		91238CCE23F8DAE400A0A703 /* UIColor+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91238CCD23F8DAE400A0A703 /* UIColor+Core.swift */; };
+		91238CD023F8E2C500A0A703 /* SpeakCaptureContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91238CCF23F8E2C500A0A703 /* SpeakCaptureContentViewController.swift */; };
 		9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188123F7FD0200C23C66 /* EloquentButton.swift */; };
 		9155188423F7FD4A00C23C66 /* UIView+Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188323F7FD4A00C23C66 /* UIView+Core.swift */; };
 		9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155188523F8666F00C23C66 /* EloquentNavigationController.swift */; };
@@ -69,6 +73,8 @@
 		9113A46223F8A4EA007B8ABF /* UserBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBarButtonItem.swift; sourceTree = "<group>"; };
 		9113A46423F8B363007B8ABF /* Eloquent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eloquent.entitlements; sourceTree = "<group>"; };
 		9113A46523F8B367007B8ABF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9113A46A23F8D3EB007B8ABF /* SpeakCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakCaptureViewController.swift; sourceTree = "<group>"; };
+		9113A46E23F8D606007B8ABF /* SpeakResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakResultsViewController.swift; sourceTree = "<group>"; };
 		912068AF23F7C294004A0DC8 /* Eloquent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eloquent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068B223F7C294004A0DC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912068B423F7C294004A0DC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,8 @@
 		912068CA23F7C296004A0DC8 /* EloquentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EloquentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		912068CE23F7C296004A0DC8 /* EloquentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentTests.swift; sourceTree = "<group>"; };
 		912068D023F7C296004A0DC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91238CCD23F8DAE400A0A703 /* UIColor+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Core.swift"; sourceTree = "<group>"; };
+		91238CCF23F8E2C500A0A703 /* SpeakCaptureContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakCaptureContentViewController.swift; sourceTree = "<group>"; };
 		9155188123F7FD0200C23C66 /* EloquentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentButton.swift; sourceTree = "<group>"; };
 		9155188323F7FD4A00C23C66 /* UIView+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Core.swift"; sourceTree = "<group>"; };
 		9155188523F8666F00C23C66 /* EloquentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EloquentNavigationController.swift; sourceTree = "<group>"; };
@@ -119,6 +127,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9113A46C23F8D5CB007B8ABF /* Speaking */ = {
+			isa = PBXGroup;
+			children = (
+				912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */,
+				9113A46A23F8D3EB007B8ABF /* SpeakCaptureViewController.swift */,
+				91238CCF23F8E2C500A0A703 /* SpeakCaptureContentViewController.swift */,
+				9113A46E23F8D606007B8ABF /* SpeakResultsViewController.swift */,
+			);
+			path = Speaking;
+			sourceTree = "<group>";
+		};
+		9113A46D23F8D5E9007B8ABF /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				9155188A23F867ED00C23C66 /* AnalysisViewController.swift */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
 		912068A623F7C294004A0DC8 = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +208,8 @@
 			children = (
 				915518A123F896EC00C23C66 /* RootViewController.swift */,
 				912068B623F7C294004A0DC8 /* LearnCollectionViewController.swift */,
-				912068B823F7C294004A0DC8 /* SpeakComposeViewController.swift */,
-				9155188A23F867ED00C23C66 /* AnalysisViewController.swift */,
+				9113A46C23F8D5CB007B8ABF /* Speaking */,
+				9113A46D23F8D5E9007B8ABF /* Personal */,
 				9155188723F8679D00C23C66 /* Container */,
 			);
 			path = Controller;
@@ -209,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				9155188323F7FD4A00C23C66 /* UIView+Core.swift */,
+				91238CCD23F8DAE400A0A703 /* UIColor+Core.swift */,
 				9155189723F8730200C23C66 /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
@@ -373,19 +401,23 @@
 				912068B923F7C294004A0DC8 /* SpeakComposeViewController.swift in Sources */,
 				912068B723F7C294004A0DC8 /* LearnCollectionViewController.swift in Sources */,
 				9155189123F86A0100C23C66 /* LearnItem.swift in Sources */,
+				9113A46F23F8D606007B8ABF /* SpeakResultsViewController.swift in Sources */,
 				9113A45F23F89D1A007B8ABF /* User.swift in Sources */,
 				912068B323F7C294004A0DC8 /* AppDelegate.swift in Sources */,
+				9113A46B23F8D3EB007B8ABF /* SpeakCaptureViewController.swift in Sources */,
 				915518A223F896EC00C23C66 /* RootViewController.swift in Sources */,
 				9113A46123F89F19007B8ABF /* DataController.swift in Sources */,
 				912068BF23F7C294004A0DC8 /* Eloquent.xcdatamodeld in Sources */,
 				9155188B23F867ED00C23C66 /* AnalysisViewController.swift in Sources */,
 				9155188223F7FD0200C23C66 /* EloquentButton.swift in Sources */,
 				9155188623F8666F00C23C66 /* EloquentNavigationController.swift in Sources */,
+				91238CCE23F8DAE400A0A703 /* UIColor+Core.swift in Sources */,
 				912068B523F7C294004A0DC8 /* SceneDelegate.swift in Sources */,
 				915518A023F88CD200C23C66 /* Core.swift in Sources */,
 				9155189823F8730200C23C66 /* UIViewController+Alerts.swift in Sources */,
 				9155189623F86CA800C23C66 /* QuizletSetExtractor.swift in Sources */,
 				9113A46323F8A4EA007B8ABF /* UserBarButtonItem.swift in Sources */,
+				91238CD023F8E2C500A0A703 /* SpeakCaptureContentViewController.swift in Sources */,
 				9155189323F86A5F00C23C66 /* LearnItemSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

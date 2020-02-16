@@ -35,5 +35,17 @@ extension UIView {
     public func roundCircularly() {
         self.cornerRadius = (self.bounds.size.width / 2.0).rounded(.up)
     }
+    
+    ///
+    /// Add a fade transition to the layer with the supplied duration
+    ///
+    public func applyFade(withDuration duration: TimeInterval) {
+        guard duration > 0 else { return }
+        let transition = CATransition()
+        transition.duration = duration
+        transition.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        transition.type = .fade
+        self.layer.add(transition, forKey: nil)
+    }
 
 }

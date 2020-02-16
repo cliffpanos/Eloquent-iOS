@@ -20,6 +20,22 @@ class SpeakComposeViewController: UIViewController {
         
         self.addKeyCommand(UIKeyCommand(input: "V", modifierFlags: .command, action: #selector(pasteFromKeyboard)))
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.becomeFirstResponder()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            self.updateTextPreview(with: "")
+        }
+    }
 
     
     // MARK: - Private
@@ -30,7 +46,6 @@ class SpeakComposeViewController: UIViewController {
     @IBOutlet weak private var textView: UITextView!
     
     private func updateTextPreview(with string: String, animated: Bool = true) {
-        guard !string.isEmpty else { return }
         let duration: TimeInterval = 0.15
         UIView.animate(withDuration: duration, animations: {
             self.previewLabel.alpha = 0.0
@@ -65,8 +80,13 @@ class SpeakComposeViewController: UIViewController {
         self.chooseDocumentFile()
     }
     
-    @IBAction private func didTapStartButton(_ sender: UIButton) {
-        // GO!
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let captureController = segue.destination as? SpeakCaptureViewController {
+            captureController.speakingScript = self.textView.text
+        }
     }
     
 }
