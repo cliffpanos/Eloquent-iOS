@@ -53,6 +53,7 @@ class ExplainTermViewController: UIViewController {
     // MARK: - Term Card Decisions
     
     public private(set) var currentIndex: Int = -1
+    public var virtualStudent: VirtualStudent!
     
     func transitionToNextTermCard(animated: Bool) {
         let nextIndex = currentIndex + 1 < itemSet.items.count ? currentIndex + 1 : 0
@@ -71,6 +72,7 @@ class ExplainTermViewController: UIViewController {
         let block = {
             self.termCardLabel.text = item.term
             self.termDefinitionCardLabel.text = item.definition
+            self.virtualStudent = VirtualStudent(topic: item)
         }
         if animated {
             animateOutAndIn(termCardLabel, between: block)
@@ -107,22 +109,16 @@ class ExplainTermViewController: UIViewController {
         guard let transcript = latestTranscript else { return }
         print(transcript)
         
-        // TODO: Charlie
-        // Determine whether or not the response was good enough (enough keywords matched, etc)
-        let sufficientAnswer = "".count == 2  // dis is always false
-        
-        let maxFollowUpViews = 2
-        if sufficientAnswer || (followUpViewsDisplayed == maxFollowUpViews) {
-            // display the definition to the user?
-            if sufficientAnswer {
+        let status = virtualStudent.listenTo(text: transcript)
+        switch status {
+            case .satisfied(data):
+                if sufficientAnswer {
                 self.feedbackGenerator.notificationOccurred(.success)
-            }
-            self.displaySuccessButtonFeatures(true, animated: true)
-//            self.transitionToNextTermCard(animated: true)
-        } else {
-            let keywordLeftOut = "Key Phrase"   // TODO: Charlie
-            self.feedbackGenerator.notificationOccurred(.warning)
-            self.animateInFollowUpView(forKeyPhrase: keywordLeftOut)
+                }
+                self.displaySuccessButtonFeatures(true, animated: true)
+            case .unsatisfied(prompt):
+                self.feedbackGenerator.notificationOccurred(.warning)
+                self.animateInFollowUpView(followUp: prompt)
         }
     }
     
@@ -136,9 +132,8 @@ class ExplainTermViewController: UIViewController {
         return count
     }
     
-    private func animateInFollowUpView(forKeyPhrase followUpKeyPhrase: String) {
+    private func animateInFollowUpView(followUp followUpText: String) {
         let currentTerm = self.itemSet.items[currentIndex].term
-        let followUpText = "How does '\(followUpKeyPhrase)' relate to \(currentTerm)?"
         let followUpView: UIView = oneFollowUpView.isHidden ? oneFollowUpView : twoFollowUpView
         let followUpLabel: UILabel = (followUpView == oneFollowUpView) ? oneFollowUpLabel : twoFollowUpLabel
         
