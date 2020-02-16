@@ -1,5 +1,5 @@
 import Foundation
-// import Reductio
+import Reductio
 
 class Token {
     var rawText: String
@@ -65,19 +65,19 @@ class SpeechText {
         return total / totalWeight
     }
 
-    var keywords : [String] {
-        let KEYS = 5
-        let keywords = tokens.filter{!$0.isStop}.map{$0.parsedText}.shuffled()
-        if keywords.count > KEYS {
-            return [String](keywords[0..<KEYS])
-        } else {
-            return keywords
-        }
-    }
-
     // var keywords : [String] {
-    //     return rawText.keywords
+    //     let KEYS = 5
+    //     let keywords = tokens.filter{!$0.isStop}.map{$0.parsedText}.shuffled()
+    //     if keywords.count > KEYS {
+    //         return [String](keywords[0..<KEYS])
+    //     } else {
+    //         return keywords
+    //     }
     // }
+
+    var keywords : [String] {
+        return rawText.keywords
+    }
 
 
     var wordFreq : [String : Int] {
