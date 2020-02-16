@@ -229,19 +229,19 @@ class ExplainTermViewController: UIViewController {
     
     private var _testingActive: Bool = false
     @IBAction private func didTapMicrophone(_ sender: UIButton) {
-//        if let voiceSearch = activeVoiceSearch {
-//            self.feedbackGenerator.prepare()
-//            voiceSearch.finishRecording()
-//        } else {
-//            self.startTranscription()
-//        }
-        if _testingActive {
-            _testingActive = !_testingActive
-            self.latestTranscript = "fake we testing"
-            self.processFinishedTranscript()
+        if let voiceSearch = activeVoiceSearch {
+            self.feedbackGenerator.prepare()
+            voiceSearch.finishRecording()
         } else {
-            _testingActive = !_testingActive
+            self.startTranscription()
         }
+//        if _testingActive {
+//            _testingActive = !_testingActive
+//            self.latestTranscript = "fake we testing"
+//            self.processFinishedTranscript()
+//        } else {
+//            _testingActive = !_testingActive
+//        }
     }
     
     @IBAction private func didTapNextButton(_ sender: EloquentButton) {

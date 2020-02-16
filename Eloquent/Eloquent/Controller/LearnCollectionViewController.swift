@@ -15,7 +15,7 @@ private let reuseIdentifier = "ItemSetCell"
 ///
 class LearnCollectionViewController: UICollectionViewController {
     
-    var itemSets: [LearnItemSet] = []
+    public var itemSets: [LearnItemSet] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,9 @@ class LearnCollectionViewController: UICollectionViewController {
             "https://quizlet.com/419957631/psychology-flash-cards/",
             "https://quizlet.com/hk/360473641/art-history-greek-art-flash-cards/",
             "https://quizlet.com/408107038/roman-poets-latin-1-flash-cards/",
+            "https://quizlet.com/292038032/heart-diagram/",
+            "https://quizlet.com/302588994/american-history-flash-cards/",
+            "https://quizlet.com/465219970/health-flash-cards/",
         ]
         for urlString in urlStrings {
             let quizletExtractor = QuizletSetExtractor(setURL: URL(string: urlString)!)
@@ -39,6 +42,8 @@ class LearnCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
+    private var currentColumnCount: Int = 1
     
     func collectionViewLayout(for horizontalSizeClass: UIUserInterfaceSizeClass, size: CGSize) -> UICollectionViewLayout {
         let regular = horizontalSizeClass == .regular
@@ -51,6 +56,8 @@ class LearnCollectionViewController: UICollectionViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(150))
         //3
         let count = regular ? 3 : (medium ? 2 : 1)
+        self.currentColumnCount = count
+        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: count)
         group.interItemSpacing = .fixed((regular || medium) ? 16 : 8)
         
@@ -66,6 +73,7 @@ class LearnCollectionViewController: UICollectionViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (context) in
             self.collectionView.collectionViewLayout = self.collectionViewLayout(for: self.traitCollection.horizontalSizeClass, size: size)
+            self.collectionView.reloadSections(IndexSet(integer: 0))
         }, completion: nil)
         
         super.viewWillTransition(to: size, with: coordinator)
@@ -93,18 +101,36 @@ class LearnCollectionViewController: UICollectionViewController {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return itemSets.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ItemSetCollectionViewCell
-        cell.decorate(for: self.itemSets[indexPath.row])
-    
+        
+        let (row, col) = indexPath.row.quotientAndRemainder(dividingBy: self.currentColumnCount)
+        let indexPathSum = row + col
+        
+        let gradientCount = colorsGradients.count
+        let (_, colorGradientIndex) = indexPathSum.quotientAndRemainder(dividingBy: gradientCount)
+        let colorGradient = self.colorsGradients[colorGradientIndex]
+        
+        cell.decorate(for: self.itemSets[indexPath.row], colors: colorGradient)
         return cell
     }
+    
+    
+    // MARK: - Private
+    
+    private let colorsGradients = [
+        [UIColor.mainShade1, UIColor.mainShade1.with(hueDelta: 0.03)],
+        [UIColor.mainShade2, UIColor.mainShade2.with(hueDelta: 0.03)],
+        [UIColor.mainShade3, UIColor.mainShade3.with(hueDelta: 0.03)],
+        [UIColor.mainShade4, UIColor.mainShade4.with(hueDelta: 0.03)],
+        [UIColor.mainShade3, UIColor.mainShade3.with(hueDelta: 0.03)],
+        [UIColor.mainShade2, UIColor.mainShade2.with(hueDelta: 0.03)],
+    ]
+
 
     // MARK: UICollectionViewDelegate
 
@@ -180,9 +206,10 @@ public class ItemSetCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func decorate(for itemSet: LearnItemSet) {
+    func decorate(for itemSet: LearnItemSet, colors: [UIColor]) {
         self.titleLabel.text = itemSet.name.capitalized
         self.itemCountLabel.text = "\(itemSet.items.count) Items"
+        self.gradientView.gradientColors = colors
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, yyyy"

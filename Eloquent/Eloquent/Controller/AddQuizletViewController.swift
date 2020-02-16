@@ -29,6 +29,7 @@ class AddQuizletViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.compactAppearance = compactAppearance
         
         self.textField.delegate = self
+        self.addKeyCommand(UIKeyCommand(input: "V", modifierFlags: .command, action: #selector(didTapPaste(_:))))
     }
     
     func setCurrentURLText(_ string: String) {
@@ -63,6 +64,10 @@ class AddQuizletViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction private func didTapPaste(_ sender: UIButton) {
+        if TESTING {
+            setCurrentURLText("https://quizlet.com/280959051/object-oriented-programming-flash-cards/")
+            return
+        }
         if let string = UIPasteboard.general.string {
             setCurrentURLText(string)
         }

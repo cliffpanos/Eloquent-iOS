@@ -8,6 +8,8 @@
 
 import Foundation
 
+public let TESTING = true
+
 public struct EloquentApp {
     
     static let bundleIdentifier: String = "com.cliffpanos.Eloquent"
