@@ -20,13 +20,14 @@ class VirtualStudent {
     let MAX_TRIES = 2
     let RATIO_LEFT = 0.4
 
+    var st : SpeechText
     var keywords : [String]
     var numKeywords : Int
 
     init(topic : LearnItem) {
         self.topic = topic
         self.status = .unsatisfied("Explain \"\(topic.term)\" to me.")
-        let st = SpeechText(text: topic.definition)
+        self.st = SpeechText(text: topic.definition)
         self.keywords = VirtualStudent.lemmatize(text: st.keywords.joined(separator: " "))
         self.numKeywords = keywords.count
     }
