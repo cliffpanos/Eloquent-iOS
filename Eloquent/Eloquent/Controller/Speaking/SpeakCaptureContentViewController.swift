@@ -136,16 +136,15 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
     func houndVoiceSearchQuery(_ query: HoundVoiceSearchQuery, didReceiveSearchResult houndServer: HoundDataHoundServer, dictionary: [AnyHashable : Any]) {
 
         print("Did receive search result: \(dictionary)")
-        let text = houndServer.disambiguation.choiceData?.first?.formattedTranscription
-        guard let text = text else {
-            //No text recieved
+        guard let text = houndServer.disambiguation?.choiceData.first?.formattedTranscription else {
+            // No text recieved
             return
         } 
         let st = SpeechText(text: text)
 
         // DATA for analytics or something
         let fillers : Int = st.numFillers
-        let slangs : Int = st.numSlangs
+        let slangs : Int = st.numSlang
         var similarity : Double? = nil
         var wpm : Double? = nil
         if let script = self.speakingScript {
@@ -157,7 +156,7 @@ extension SpeakCaptureContentViewController: HoundVoiceSearchQueryDelegate {
             wpm = Double(st.tokens.count) / minutes
         }
 
-        print("fillers: \(fillers), slangs: \(slangs), similarity: \(similarity), WPM: \(wpm)")
+        print("fillers: \(fillers), slangs: \(slangs), similarity: \(similarity ?? -1), WPM: \(wpm ?? -1))")
     }
 
     func houndVoiceSearchQuery(_ query: HoundVoiceSearchQuery, changedStateFrom oldState: HoundVoiceSearchQueryState, to newState: HoundVoiceSearchQueryState) {

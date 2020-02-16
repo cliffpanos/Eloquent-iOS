@@ -12,12 +12,14 @@ public class LearnItemSet: NSObject {
     
     let name: String
     let items: [LearnItem]
+    let dateCreated: Date
     
     var image: UIImage? = nil
     
-    public init(named name: String, items: [LearnItem]) {
+    public init(named name: String, items: [LearnItem], dateAdded date: Date) {
         self.name = name
         self.items = items
+        self.dateCreated = date
     }
     
     public override var description: String {

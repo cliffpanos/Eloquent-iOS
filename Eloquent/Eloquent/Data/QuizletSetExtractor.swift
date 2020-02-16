@@ -34,8 +34,8 @@ public class QuizletSetExtractor: NSObject {
             }
             
             // Parse the data into items and configure the set
-            let quiz = Quizlet(htmlData: htmlData)
-            let itemSet = LearnItemSet(named: quiz.title, items: quiz.cards)
+            let quizlet = Quizlet(htmlData: htmlData)
+            let itemSet = LearnItemSet(named: quizlet.title, items: quizlet.cards, dateAdded: Date())
             
             // Call the completion handler on the main queue
             DispatchQueue.main.async {

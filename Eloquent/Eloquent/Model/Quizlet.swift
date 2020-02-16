@@ -1,5 +1,4 @@
 import Foundation
-import FoundationNetworking
 import Kanna
 
 class Quizlet {
