@@ -16,6 +16,9 @@ class Token {
     var filler : Bool {
         return fillers.contains(parsedText)
     }
+    var isStop : Bool {
+        return stopwords.contains(parsedText)
+    }
     
 }
 
@@ -36,6 +39,36 @@ class SpeechText {
             grams.append(tokens[i...i+n-1].map{$0.parsedText}.joined(separator: " "))
         }
         return grams
+    }
+
+    func keywords() -> [String] {
+        let KEYS = 5
+        let keywords = tokens.filter{!$0.isStop}.map{$0.parsedText}.shuffled()
+        if keywords.count > KEYS {
+            return [String](keywords[0..<KEYS])
+        } else {
+            return keywords
+        }
+    }
+
+    func similarity(to other: SpeechText) -> Double {
+        let freqA = self.wordFreq
+        let freqB = other.wordFreq
+        var totalWeight : Double = 0
+        var total : Double = 0
+        for k in [String](freqA.keys) + [String](freqB.keys) {
+            if stopwords.contains(k) {
+                continue
+            } else {
+                let fa = freqA[k] ?? 0
+                let fb = freqB[k] ?? 0
+                let sim = 1 - (Double(abs(fa - fb)) / Double(max(fa, fb)))
+                let weight = Double(fa + fb)
+                totalWeight += weight
+                total += sim * weight
+            }
+        }
+        return total / totalWeight
     }
 
     var wordFreq : [String : Int] {
@@ -113,3 +146,6 @@ let slang = [1 : [
     "quick buck",
     "kick back"
 ]]
+
+let stopwords = ["", "i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or",
+"because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
