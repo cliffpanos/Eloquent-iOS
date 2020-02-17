@@ -49,7 +49,8 @@ class SpeakResultsViewController: UIViewController {
         self.wordsPerMinuteLabel.text = String(format: "%02d", wordsPerMinute)
         
         if let baseline = self.baselineSpeechText {
-            let similarity = speechTextResult.similarity(to: baseline)
+            var similarity = speechTextResult.similarity(to: baseline)
+            similarity = 1.0 - ((1.0 - similarity) * 0.8)   // Bias to increase similarity
             self.similarityPercentageLabel.text = "\(Int(similarity * 100))%"
             self.similarity = similarity
         } else {
@@ -108,6 +109,7 @@ class SpeakResultsViewController: UIViewController {
                             UIAlertAction(title: "Cancel", style: .cancel, handler: nil),
                             UIAlertAction(title: "End Analysis", style: .default, handler: { action in
                                 self.navigationController?.popToRootViewController(animated: true)
+                                (self.navigationController?.viewControllers.first as? SpeakComposeViewController)?.clearText()
                             })
                             ], addOkAction: false)
     }

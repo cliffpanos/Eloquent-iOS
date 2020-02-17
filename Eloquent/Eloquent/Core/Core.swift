@@ -22,8 +22,8 @@ public struct EloquentApp {
 
 public struct EloquentHoundified {
     
-    static let clientID: String = "DkmIXRiIQCX0aaFlYAo0Xg=="
+    static let clientID: String = "Szw6GG-X0XF62SXebsUtdw=="
     
-    static let clientKey: String = "-6jqvxLr0r2dmxqY9sOGyFYPMroN867u84Oo2EJJ3mWwe_I7ypTszM9oKh5DlNiWq83W_b7jC4xJK4kwF1tlIA=="
+    static let clientKey: String = "bMrPwMxmhb_1_DR-89_L-PwnjBw8Q0oqdSXPGRHVoNPSyY7HysLL5aIyhN6Vrr2xM-8MAZneVZMMCp5rzmlTUg=="
     
 }

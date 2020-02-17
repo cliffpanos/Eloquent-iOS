@@ -26,7 +26,7 @@ class LearnCollectionViewController: UICollectionViewController {
         let urlStrings: [String] = [
             "https://quizlet.com/145245325/midterm-review-flash-cards/",
             "https://quizlet.com/190542265/world-war-2-people-flash-cards/",
-            "https://quizlet.com/419957631/psychology-flash-cards/",
+            "https://quizlet.com/159520031/psychology-flash-cards/",
             "https://quizlet.com/hk/360473641/art-history-greek-art-flash-cards/",
             "https://quizlet.com/408107038/roman-poets-latin-1-flash-cards/",
             "https://quizlet.com/292038032/heart-diagram/",

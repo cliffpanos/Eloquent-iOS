@@ -247,12 +247,12 @@ class ExplainTermViewController: UIViewController {
         let voiceSearch =  HoundVoiceSearch.instance().newVoiceSearch()
         self.activeVoiceSearch = voiceSearch
         voiceSearch.delegate = self
-        let currentKeywords = virtualStudent.st.keywords
-        voiceSearch.requestInfoBuilder.clientMatches = 
-            currentKeywords.map{[
-                "Expression" : $0,
-                "Result" : ["keyword" : $0]
-            ]}
+//        let currentKeywords = virtualStudent.st.keywords
+//        voiceSearch.requestInfoBuilder.clientMatches =
+//            currentKeywords.map{[
+//                "Expression" : $0,
+//                "Result" : ["keyword" : $0]
+//            ]}
 
         voiceSearch.start()
     }

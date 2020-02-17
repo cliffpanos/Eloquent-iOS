@@ -36,6 +36,10 @@ class SpeakComposeViewController: UIViewController {
             self.updateTextPreview(with: "")
         }
     }
+    
+    public func clearText() {
+        updateTextPreview(with: "", animated: true)
+    }
 
     
     // MARK: - Private
