@@ -35,3 +35,9 @@ Finally, we used a lightweight HTML Parsing and Searching library called Kanna t
 Charlie found it quite difficult to work on an iOS app, since he does not have a Mac. Coding in Swift without a Mac proved to be a challenge, since many powerful Swift libraries and tools are exclusive to Apple systems. This issue was partially alleviated by the decision to do most of the NLP analysis from the ground up, without an NLP library — in some cases though, coding without the ability to debug on my own machine was unavoidable.
 
 Regarding Houndify, we ended up building some custom animations instead of using Houndify's built-in ones, but in the end, we solved all functionality issues with more and more code!
+
+<br></br>
+  
+<p align="center">
+    <img src="Assets/EloquentAppIconRounded.png" width=250em>
+</p>
