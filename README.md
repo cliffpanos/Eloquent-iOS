@@ -1,5 +1,6 @@
 # TreeHacks 2020: Learn Out Loud with Eloquent on iOS
-### TreeHacks 2020 // #hackwithtrees
+### TreeHacks 2020 [Winner] Best Use of Houndify Voice AI API
+#### #hackwithtrees
 
 ### Speak to Learn. Learn to Speak.
 
